@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomeComponent } from './home.component';
+import { DataService } from '../Services/data.service';
+import { MockDataService } from '../Services/mock-data.service';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -10,6 +12,7 @@ describe('HomeComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ HomeComponent ]
     })
+    .overrideComponent(HomeComponent, {set: {providers: [{provide: DataService, useClass: MockDataService}]}})
     .compileComponents();
   }));
 
@@ -22,4 +25,9 @@ describe('HomeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should contain 4 products', () => {
+    expect(component.movies.length).toBe(4);
+  });
+
 });
