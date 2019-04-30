@@ -13,8 +13,8 @@ export class HomeComponent implements OnInit {
 
   movies: IMovie[];
 
-  // constructor(private service: DataService) { }
-  constructor(private service: MockDataService) { }
+  constructor(private service: DataService) { }
+  // constructor(private service: MockDataService) { }
 
   ngOnInit() {
     this.service.getData().subscribe(
