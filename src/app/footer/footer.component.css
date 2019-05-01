@@ -1,0 +1,18 @@
+footer {
+    height: 4em;
+    background-color: black;
+}
+
+.logo{
+    color: red;
+}
+
+.footerText{
+    font-size: 1rem;
+    color: white;
+}
+
+.socialLogos{
+    font-size: 1rem;
+    color: white;
+}
