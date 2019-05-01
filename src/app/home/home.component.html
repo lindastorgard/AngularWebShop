@@ -1,12 +1,25 @@
-<p>
-  home works!
-</p>
+<p>home works!</p>
 
 
-<div *ngFor = "let movie of movies">
-  <img src="{{movie.imageUrl}}" alt="{{movie.name}}">
-  <h4>{{movie.name}}</h4>
-  <p>{{movie.year}}</p>
-  <p>{{movie.price}}</p>
+<div *ngFor="let movie of movies">
+  <!-- <img src="{{movie.imageUrl}}" alt="{{movie.name}}"> -->
+  <h4>Name: {{movie.name}}</h4>
+  <p>Year: {{movie.year}}</p>
+  <p>Price: {{movie.price}}</p>
+
+  Cat:
+  <div *ngFor="let category of categories">
+    <p>{{category.id}}: {{category.name}}</p>
+
+
+  </div>
+
+  
+
+
+
+  <hr>
+  <!-- <p><p>Category: {{movie.productCategory[0].categoryId}}</p>
+  <p *ngIf='movie.productCategory[1]'>Category: {{movie.productCategory[1].categoryId}}</p> -->
 
 </div>
