@@ -28,7 +28,7 @@ input{
     background-color: black;
     color: white;
     border-radius: 25px;
-    padding: 5px 20px;
+    padding: 0px 90px 0px 10px;
 }
 
 input:hover{
@@ -36,4 +36,9 @@ input:hover{
     color: black;
     border: black;
     font-weight: 300;
+}
+
+.navIcons{
+    color: white;
+    font-size: 1rem;
 }
