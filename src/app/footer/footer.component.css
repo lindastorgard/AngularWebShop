@@ -28,12 +28,16 @@ h3{
     background-color: orange;
     color: black;
     border: black;
+    font-weight: 300;
 }
 
 
 /* footer styling */
 footer {
-    height: 4em;
+    position: absolute;
+    top: calc(700px + 60px);
+    height: 80px;
+    width: 100%;
     background-color: black;
 }
 
