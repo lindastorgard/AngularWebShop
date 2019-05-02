@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { IMovie } from '../Interfaces/IMovie';
 import { DataService } from '../Services/data.service';
 import { MockDataService } from '../Services/mock-data.service';
-import { CategoriesService } from '../Services/categories.service';
 import { ICategories } from '../Interfaces/ICategories';
 import { merge } from 'rxjs';
 import { extend } from 'webdriver-js-extender';
@@ -22,7 +21,7 @@ export class HomeComponent implements OnInit {
 
 
   // constructor(private service: DataService) { }
-  constructor(private dataService1: DataService, private dataService2: CategoriesService) { }
+  constructor(private dataService1: DataService, private dataService2: DataService) { }
   // constructor(private service: MockDataService) { }
 
   ngOnInit() {
@@ -30,9 +29,29 @@ export class HomeComponent implements OnInit {
       (dataMovies) => { this.movies = dataMovies, console.log(dataMovies) }
     );
 
-    this.dataService2.getData().subscribe(
+    this.dataService2.getCategories().subscribe(
       (dataCategories) => { this.categories = dataCategories, console.log(dataCategories) }
     );
+
+
+
+  //   let arr1 = [
+  //     { id: "abdc4051", date: "2017-01-24" },
+  //     { id: "abdc4052", date: "2017-01-22" }
+  // ];
+  
+  // let arr2 = [
+  //     { id: "abdc4051", name: "ab" },
+  //     { id: "abdc4052", name: "abc" }
+  // ];
+  
+  // const mergeById = (a1: IMovie[], a2: ICategories[]) =>
+  //     a1.map(itm => ({
+  //         ...a2.find((category) => (category.id === itm.id) && item),
+  //         ...itm
+  //     }));
+  
+  // console.log(mergeById(a1, a2));
 
   }
 

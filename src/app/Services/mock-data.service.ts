@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { IDataService } from '../Interfaces/IDataService';
 import { IMovie } from '../Interfaces/IMovie';
 import { Observable, of } from 'rxjs';
+import { ICategories } from '../Interfaces/ICategories';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,18 @@ export class MockDataService implements IDataService{
 
   getData(): Observable<IMovie[]> {
     return of(this.movies);
-  }
+  };
+
+  categories: ICategories[] = [
+    { id: 1, name: 'Thriller' },
+    { id: 2, name: 'Comedy' },
+    { id: 3, name: 'Sci-fi' },
+    { id: 4, name: 'Horror' }
+  ];
+
+  getCategories(): Observable<ICategories[]> {
+    return of(this.categories);
+  };
 
   constructor() { }
 }
