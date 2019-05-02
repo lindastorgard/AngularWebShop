@@ -24,6 +24,12 @@ h3{
     padding: 5px 20px;
 }
 
+.categoryButton:hover{
+    background-color: orange;
+    color: black;
+    border: black;
+}
+
 
 /* footer styling */
 footer {
