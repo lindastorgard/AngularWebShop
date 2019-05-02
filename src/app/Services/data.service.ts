@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IMovie } from '../Interfaces/IMovie';
 import { ICategories } from '../Interfaces/ICategories';
+import { IRandom } from '../Interfaces/IRandom';
 
 @Injectable({
   providedIn: 'root'
@@ -18,5 +19,9 @@ export class DataService implements IDataService {
 
   getCategories(): Observable<ICategories[]>{
     return this.http.get<ICategories[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/categories');
+  }
+
+  getRandom(): Observable<IRandom[]>{
+    return this.http.get<IRandom[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/random?number=1');
   }
 }

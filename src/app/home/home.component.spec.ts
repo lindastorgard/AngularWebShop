@@ -26,8 +26,8 @@ describe('HomeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should contain 4 products', () => {
-    expect(component.movies.length).toBe(4);
+  it('should contain 1 random movie', () => {
+    expect(component.random.length).toBe(1);
   });
 
 });

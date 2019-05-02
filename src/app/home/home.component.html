@@ -1,24 +1,36 @@
-<div *ngFor="let movie of movies">
-  <!-- <img src="{{movie.imageUrl}}" alt="{{movie.name}}"> -->
+<div *ngFor="let randomMovie of random">
+  <div class="randomMovieFrame">
+     <img class="randomMoviePoster" src="{{randomMovie.imageUrl}}" alt="{{randomMovie.name}}">
+  </div>
+  <h4>Name: {{randomMovie.name}}</h4>
+  <p>Year: {{randomMovie.year}}</p>
+  <p>Price: {{randomMovie.price}}</p>
+
+</div>
+
+
+
+<!-- <div *ngFor="let movie of movies">
+  <img src="{{movie.imageUrl}}" alt="{{movie.name}}">
   <h4>Name: {{movie.name}}</h4>
   <p>Year: {{movie.year}}</p>
   <p>Price: {{movie.price}}</p>
 
   <p>Category: {{movie.productCategory[0].categoryId}}</p>
-        <p *ngIf='movie.productCategory[1]'>Category: {{movie.productCategory[1].categoryId}}</p>
-
-<hr>
+        <p *ngIf='movie.productCategory[1]'>Category: {{movie.productCategory[1].categoryId}}</p> -->
 
 
 
-  <!-- All categories:
+
+
+<!-- All categories:
   <div *ngFor="let category of categories">
     <p>{{category.id}}: {{category.name}}</p>
  -->
 
- 
 
-  
+
+
 <!-- if (movies.productCategory.categoryId = categories.id){
         console.log(this.categories.name)
       }else{
@@ -26,8 +38,6 @@
       } -->
 
 
-  
-  <!-- <p><p>Category: {{movie.productCategory[0].categoryId}}</p>
-  <p *ngIf='movie.productCategory[1]'>Category: {{movie.productCategory[1].categoryId}}</p> -->
 
-</div>
+<!-- <p><p>Category: {{movie.productCategory[0].categoryId}}</p>
+  <p *ngIf='movie.productCategory[1]'>Category: {{movie.productCategory[1].categoryId}}</p> -->

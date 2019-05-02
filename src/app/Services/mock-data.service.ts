@@ -3,12 +3,14 @@ import { IDataService } from '../Interfaces/IDataService';
 import { IMovie } from '../Interfaces/IMovie';
 import { Observable, of } from 'rxjs';
 import { ICategories } from '../Interfaces/ICategories';
+import { IRandom } from '../Interfaces/IRandom';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MockDataService implements IDataService{
 
+  // mock-data for movies
   movies: IMovie[] = [
     { id: 1, name: 'Movie 1', price: 69, description: 'One star movie', imageUrl: '' },
     { id: 2, name: 'Movie 2', price: 45, description: 'Two star movie', imageUrl: '' },
@@ -20,6 +22,7 @@ export class MockDataService implements IDataService{
     return of(this.movies);
   };
 
+  // mock-data for categories
   categories: ICategories[] = [
     { id: 1, name: 'Thriller' },
     { id: 2, name: 'Comedy' },
@@ -30,6 +33,18 @@ export class MockDataService implements IDataService{
   getCategories(): Observable<ICategories[]> {
     return of(this.categories);
   };
+
+
+  // mock-data for random
+  random: IRandom[] = [
+    { id: 1, name: 'Movie 1', price: 69, description: 'One star movie', imageUrl: '' }
+  ];
+
+  getRandom(): Observable<IRandom[]> {
+    return of(this.random);
+  };
+
+
 
   constructor() { }
 }

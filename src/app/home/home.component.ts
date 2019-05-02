@@ -5,6 +5,7 @@ import { MockDataService } from '../Services/mock-data.service';
 import { ICategories } from '../Interfaces/ICategories';
 import { merge } from 'rxjs';
 import { extend } from 'webdriver-js-extender';
+import { IRandom } from '../Interfaces/IRandom';
 
 
 @Component({
@@ -16,21 +17,25 @@ export class HomeComponent implements OnInit {
 
   movies: IMovie[];
   categories: ICategories[];
-
+  random: IRandom[];
 
 
 
   // constructor(private service: DataService) { }
-  constructor(private dataService1: DataService, private dataService2: DataService) { }
+  constructor(private service: DataService) { }
   // constructor(private service: MockDataService) { }
 
   ngOnInit() {
-    this.dataService1.getData().subscribe(
+    this.service.getData().subscribe(
       (dataMovies) => { this.movies = dataMovies, console.log(dataMovies) }
     );
 
-    this.dataService2.getCategories().subscribe(
+    this.service.getCategories().subscribe(
       (dataCategories) => { this.categories = dataCategories, console.log(dataCategories) }
+    );
+
+    this.service.getRandom().subscribe(
+      (dataRandom) => { this.random = dataRandom, console.log(dataRandom)}
     );
 
 
