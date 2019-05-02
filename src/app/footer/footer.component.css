@@ -1,3 +1,15 @@
+.catSection{
+    height: 10em;
+    background-color: black;
+}
+
+h3{
+    color: white;
+}
+
+
+
+
 footer {
     height: 4em;
     background-color: black;
