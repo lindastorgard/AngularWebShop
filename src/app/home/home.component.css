@@ -12,3 +12,26 @@
     /* object-position: center; */
 }
 
+.carousel{
+    z-index: -1;
+}
+
+.carouselRandomMovieFrame{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 760px;
+    overflow: hidden;
+}
+
+.carouselRandomMoviePoster{
+    width: 100%;
+    object-fit: cover;
+    /* object-position: center; */
+}
+
+.carouselRandomMovieControl{
+    position: absolute;
+    bottom: 100;
+}
+

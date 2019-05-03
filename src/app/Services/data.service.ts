@@ -22,6 +22,6 @@ export class DataService implements IDataService {
   }
 
   getRandom(): Observable<IRandom[]>{
-    return this.http.get<IRandom[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/random?number=1');
+    return this.http.get<IRandom[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/random?number=3');
   }
 }

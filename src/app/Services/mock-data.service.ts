@@ -37,7 +37,9 @@ export class MockDataService implements IDataService{
 
   // mock-data for random
   random: IRandom[] = [
-    { id: 1, name: 'Movie 1', price: 69, description: 'One star movie', imageUrl: '' }
+    { id: 1, name: 'Movie 1', price: 69, description: 'One star movie', imageUrl: '' },
+    { id: 2, name: 'Movie 2', price: 79, description: 'Two star movie', imageUrl: '' },
+    { id: 3, name: 'Movie 3', price: 89, description: 'Three star movie', imageUrl: '' }
   ];
 
   getRandom(): Observable<IRandom[]> {
