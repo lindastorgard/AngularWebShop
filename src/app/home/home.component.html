@@ -1,12 +1,31 @@
 <main class="container-fluid container">
 
-  <div *ngFor="let randomMovie of random" class="row">
-    <div class="randomMovieFrame col-12">
-      <img class="randomMoviePoster" src="{{randomMovie.imageUrl}}" alt="{{randomMovie.name}}">
-    </div>
+  <!-- <div *ngFor="let randomMovie of random" class="row">
+    <div class="randomMovieFrame col-12"> -->
 
+      <!-- <img class="randomMoviePoster" src="{{randomMovie.imageUrl}}" alt="{{randomMovie.name}}"> -->
+      <!-- <h4>Id: {{randomMovie.productCategory}}</h4> -->
+    <!-- </div>
+  </div> -->
+
+  <div *ngFor="let mov of movies">
+   
+
+    {{mov.name}}
+    Id: {{mov.productCategory[0].categoryId}}
+    Id: {{mov.productCategory[1].categoryId}}
+    
   </div>
+
+  <div *ngFor="let cat of categories">
+    Id {{cat.id}} = {{cat.name}}
+  </div>
+
+
 </main>
+
+
+
 <!-- <h4>Name: {{randomMovie.name}}</h4>
   <p>Year: {{randomMovie.year}}</p>
   <p>Price: {{randomMovie.price}}</p> -->

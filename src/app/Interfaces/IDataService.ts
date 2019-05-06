@@ -8,5 +8,5 @@ export interface IDataService {
     getData(): Observable<IMovie[]>;
     getCategories(): Observable<ICategories[]>;
     getRandom(): Observable<IRandom[]>;
-    getSearch(): Observable<ISearch[]>;
+    // getSearch(): Observable<ISearch[]>;
 }

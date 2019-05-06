@@ -46,13 +46,13 @@ export class MockDataService implements IDataService{
   };
 
   // mock-data for search
-  search: ISearch[] = [
-    { id: 1, name: 'Movie 1', price: 69, description: 'One star movie', imageUrl: '' }
-  ];
+  // search: ISearch[] = [
+  //   { id: 1, name: 'Movie 1', price: 69, description: 'One star movie', imageUrl: '' }
+  // ];
 
-  getSearch(): Observable<ISearch[]>{
-    return of(this.search);
-  };
+  // getSearch(): Observable<ISearch[]>{
+  //   return of(this.search);
+  // };
 
   
 

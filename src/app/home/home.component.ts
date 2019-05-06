@@ -3,7 +3,7 @@ import { IMovie } from '../Interfaces/IMovie';
 import { DataService } from '../Services/data.service';
 import { MockDataService } from '../Services/mock-data.service';
 import { ICategories } from '../Interfaces/ICategories';
-import { merge } from 'rxjs';
+import { merge, Observable } from 'rxjs';
 import { extend } from 'webdriver-js-extender';
 import { IRandom } from '../Interfaces/IRandom';
 import { ISearch } from '../Interfaces/ISearch';
@@ -16,10 +16,12 @@ import { ISearch } from '../Interfaces/ISearch';
 })
 export class HomeComponent implements OnInit {
 
-  // movies: IMovie[];
-  // categories: ICategories[];
+  movies: IMovie[];
+  categories: ICategories[];
   random: IRandom[];
-  search: ISearch[];
+ 
+  
+  // search: ISearch[];
 
 
 
@@ -28,22 +30,30 @@ export class HomeComponent implements OnInit {
   // constructor(private service: MockDataService) { }
 
   ngOnInit() {
-    // this.service.getData().subscribe(
-    //   (dataMovies) => { this.movies = dataMovies, console.log(dataMovies) }
+
+    // this.service.getSearch().subscribe(
+    //   (dataSerch) => { this.search = dataSerch, console.log(dataSerch) }
     // );
 
-    this.service.getSearch().subscribe(
-      (dataSerch) => { this.search = dataSerch, console.log(dataSerch) }
+
+    this.service.getData().subscribe(
+      (dataMovies) => { this.movies = dataMovies, console.log(dataMovies) }
     );
 
-    // this.service.getCategories().subscribe(
-    //   (dataCategories) => { this.categories = dataCategories, console.log(dataCategories) }
-    // );
+    this.service.getCategories().subscribe(
+      (dataCategories) => { this.categories = dataCategories, console.log(dataCategories) }
+    );
 
     this.service.getRandom().subscribe(
-      (dataRandom) => { this.random = dataRandom, console.log(dataRandom)}
+      (dataRandom) => { this.random = dataRandom, console.log(dataRandom) }
     );
 
-  }
 
+    
+
+    
+
+  }
 }
+
+

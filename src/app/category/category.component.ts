@@ -24,25 +24,49 @@ export class CategoryComponent implements OnInit {
     this.service.getCategories().subscribe(
       (dataCategories) => { this.categories = dataCategories, console.log(dataCategories) }
     );
-  }
+
+    // function printCategory(dataMovies: IMovie[], dataCategories: ICategories[]){
+    //   for (let i=0; i < dataMovies.length; i++){
+    //     console.log(this.movies.id);
+    //   }
+    // }
+
+
+    // let myArray = ["ett", "två"];
+
+    // for (let i = 0; i < myArray.length; i++) {
+
+    //   console.log(myArray[i]);
+
+    // }
+
+  //   json1 = [
+  //     {id:1, test: 0},
+  //     {id:2, test: 0},
+  //     {id:3, test: 0},
+  //     {id:4, test: 0},
+  //     {id:5, test: 0}
+  // ];
+  
+  // json2 = [
+  //     {id:1, test: 1},
+  //     {id:3, test: 1},
+  //     {id:5, test: 1}
+  // ];
+  
+  // this.movies.map(x => Object.assign(x, this.categories.find(y => y.id == x.categoryId)));
+  // }
+
+
+  // <p>Category: {{movie.productCategory[0].categoryId}}</p>
+  //       <p *ngIf='movie.productCategory[1]'>Category: {{movie.productCategory[1].categoryId}}</p> -->
+
+
 
 
   
- //   let arr1 = [
-  //     { id: "abdc4051", date: "2017-01-24" },
-  //     { id: "abdc4052", date: "2017-01-22" }
-  // ];
-  
-  // let arr2 = [
-  //     { id: "abdc4051", name: "ab" },
-  //     { id: "abdc4052", name: "abc" }
-  // ];
-  
-  // const mergeById = (a1: IMovie[], a2: ICategories[]) =>
-  //     a1.map(itm => ({
-  //         ...a2.find((category) => (category.id === itm.id) && item),
-  //         ...itm
-  //     }));
+
   
   // console.log(mergeById(a1, a2));
+}
 }
