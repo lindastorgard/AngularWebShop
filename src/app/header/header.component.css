@@ -21,6 +21,10 @@ nav{
     font-size: 0.8rem;
 }
 
+.navLink:hover{
+    color: orange;
+}
+
 input{
     border: 0.8px solid orange;
     font-size: 0.8rem;
@@ -41,4 +45,8 @@ input:hover{
 .navIcons{
     color: white;
     font-size: 1rem;
+}
+
+.navIcons:hover{
+    color: orange;
 }

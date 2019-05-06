@@ -6,6 +6,7 @@ import { ICategories } from '../Interfaces/ICategories';
 import { merge } from 'rxjs';
 import { extend } from 'webdriver-js-extender';
 import { IRandom } from '../Interfaces/IRandom';
+import { ISearch } from '../Interfaces/ISearch';
 
 
 @Component({
@@ -15,9 +16,10 @@ import { IRandom } from '../Interfaces/IRandom';
 })
 export class HomeComponent implements OnInit {
 
-  movies: IMovie[];
-  categories: ICategories[];
+  // movies: IMovie[];
+  // categories: ICategories[];
   random: IRandom[];
+  search: ISearch[];
 
 
 
@@ -26,40 +28,22 @@ export class HomeComponent implements OnInit {
   // constructor(private service: MockDataService) { }
 
   ngOnInit() {
-    this.service.getData().subscribe(
-      (dataMovies) => { this.movies = dataMovies, console.log(dataMovies) }
+    // this.service.getData().subscribe(
+    //   (dataMovies) => { this.movies = dataMovies, console.log(dataMovies) }
+    // );
+
+    this.service.getSearch().subscribe(
+      (dataSerch) => { this.search = dataSerch, console.log(dataSerch) }
     );
 
-    this.service.getCategories().subscribe(
-      (dataCategories) => { this.categories = dataCategories, console.log(dataCategories) }
-    );
+    // this.service.getCategories().subscribe(
+    //   (dataCategories) => { this.categories = dataCategories, console.log(dataCategories) }
+    // );
 
     this.service.getRandom().subscribe(
       (dataRandom) => { this.random = dataRandom, console.log(dataRandom)}
     );
 
-
-
-  //   let arr1 = [
-  //     { id: "abdc4051", date: "2017-01-24" },
-  //     { id: "abdc4052", date: "2017-01-22" }
-  // ];
-  
-  // let arr2 = [
-  //     { id: "abdc4051", name: "ab" },
-  //     { id: "abdc4052", name: "abc" }
-  // ];
-  
-  // const mergeById = (a1: IMovie[], a2: ICategories[]) =>
-  //     a1.map(itm => ({
-  //         ...a2.find((category) => (category.id === itm.id) && item),
-  //         ...itm
-  //     }));
-  
-  // console.log(mergeById(a1, a2));
-
   }
-
-
 
 }

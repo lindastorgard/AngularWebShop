@@ -1,3 +1,9 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
 /* category styling */
 .categorySection{
     position: absolute;
@@ -53,4 +59,8 @@ footer {
 .socialLogos{
     font-size: 1rem;
     color: white;
+}
+
+.socialLogoHover:hover{
+    color: orange;
 }

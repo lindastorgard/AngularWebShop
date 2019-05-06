@@ -4,6 +4,7 @@ import { IMovie } from '../Interfaces/IMovie';
 import { Observable, of } from 'rxjs';
 import { ICategories } from '../Interfaces/ICategories';
 import { IRandom } from '../Interfaces/IRandom';
+import { ISearch } from '../Interfaces/ISearch';
 
 @Injectable({
   providedIn: 'root'
@@ -37,14 +38,23 @@ export class MockDataService implements IDataService{
 
   // mock-data for random
   random: IRandom[] = [
-    { id: 1, name: 'Movie 1', price: 69, description: 'One star movie', imageUrl: '' },
-    { id: 2, name: 'Movie 2', price: 79, description: 'Two star movie', imageUrl: '' },
-    { id: 3, name: 'Movie 3', price: 89, description: 'Three star movie', imageUrl: '' }
+    { id: 1, name: 'Movie 1', price: 69, description: 'One star movie', imageUrl: '' }
   ];
 
   getRandom(): Observable<IRandom[]> {
     return of(this.random);
   };
+
+  // mock-data for search
+  search: ISearch[] = [
+    { id: 1, name: 'Movie 1', price: 69, description: 'One star movie', imageUrl: '' }
+  ];
+
+  getSearch(): Observable<ISearch[]>{
+    return of(this.search);
+  };
+
+  
 
 
 
