@@ -4,4 +4,5 @@ export interface IMovie {
     price: number;
     imageUrl: string;
     description: string;
+    productCategory: [{categoryId: []}];
 }

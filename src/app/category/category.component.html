@@ -1,3 +1,72 @@
-<p>
-  category works!
-</p>
+<main class="container-fluid">
+  <div class="row">
+    <div class="pageFrame col-12">
+      <h1 class="headingCategory">{{category.id}}{{category.name}}</h1>
+    </div>
+  </div>
+  <!-- <section class="row categoryMargin">
+    <div *ngFor="let movie of movies" class="col d-flex flex-row">
+      <div class="categoryMovieContainer categoryMovieFrame ">
+        <img class="categoryMoviePoster" src="{{movie.imageUrl}}" alt="{{movie.name}}">
+        <div class="overlay text">{{movie.price}}{{movie.name}}</div>
+      </div>
+    </div>
+  </section> -->
+
+  <section class="row categoryMargin">
+    <div *ngFor="let myCategories of catMov" class="col d-flex flex-row">
+      <div class="categoryMovieContainer categoryMovieFrame ">
+        <img class="categoryMoviePoster" src="{{myCategories.imageUrl}}" alt="#">
+        <!-- <div class="#">{{myCategories.name.price}}{{myCategories.name.name}}</div> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- <div *ngFor="let myCategories of catMov" >
+    <h1>{{myCategories.name}}</h1>
+
+  </div> -->
+
+</main>
+
+
+
+
+
+
+<!-- <h4>Id: {{randomMovie.productCategory}}</h4> -->
+
+<!-- {{movie.name}}
+Id: {{movie.productCategory[0].categoryId}}
+    Id: {{movie.productCategory[1].categoryId}} -->
+
+
+<!-- <p>Category: {{movie.productCategory[0].categoryId}}</p>
+        <p *ngIf='movie.productCategory[1]'>Category: {{movie.productCategory[1].categoryId}}</p>
+      </div> -->
+
+
+
+<!-- <div *ngFor="let randomMovie of random" class="row">
+      <div class="randomMovieFrame col-12">
+  
+        <img class="randomMoviePoster" src="{{randomMovie.imageUrl}}" alt="{{randomMovie.name}}">
+        <h4>Id: {{randomMovie.productCategory}}</h4>
+      </div>
+    </div> -->
+
+
+
+<!-- <div *ngFor="let movie of movies">
+    {{movie.name}} -->
+<!-- Id: {{movie.productCategory[0].categoryId}}
+    Id: {{movie.productCategory[1].categoryId}} -->
+
+
+<!-- <p>Category: {{movie.productCategory[0].categoryId}}</p>
+        <p *ngIf='movie.productCategory[1]'>Category: {{movie.productCategory[1].categoryId}}</p>
+      </div> -->
+
+<!-- <div *ngFor="let category of categories">
+    {{category.name}}
+  </div> -->

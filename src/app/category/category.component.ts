@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { IMovie } from '../Interfaces/IMovie';
 import { ICategories } from '../Interfaces/ICategories';
 import { DataService } from '../Services/data.service';
+import { ActivatedRoute } from '@angular/router';
+import { Category } from '../Interfaces/Category';
+import { getPluralCategory } from '@angular/common/src/i18n/localization';
 
 @Component({
   selector: 'app-category',
@@ -12,61 +15,62 @@ export class CategoryComponent implements OnInit {
 
   movies: IMovie[];
   categories: ICategories[];
+  category: ICategories;
+  categoryMovies: IMovie[];
+  catMov = [];
 
-  constructor(private service: DataService) { }
+  constructor(private route: ActivatedRoute, private service: DataService) { }
 
   ngOnInit() {
+    this.route.params.subscribe(myParams => {
+      let categoryId = myParams['id'];
+      // console.log("Router id from footer:", categoryId);
+      this.getCategory(+categoryId);
 
-    this.service.getData().subscribe(
-      (dataMovies) => { this.movies = dataMovies, console.log(dataMovies) }
-    );
+      this.service.getData().subscribe((dataMovies) => {
+        this.movies = dataMovies;
 
-    this.service.getCategories().subscribe(
-      (dataCategories) => { this.categories = dataCategories, console.log(dataCategories) }
-    );
-
-    // function printCategory(dataMovies: IMovie[], dataCategories: ICategories[]){
-    //   for (let i=0; i < dataMovies.length; i++){
-    //     console.log(this.movies.id);
-    //   }
-    // }
+        // console.log("All movies: ", dataMovies);
 
 
-    // let myArray = ["ett", "två"];
+        this.catMov = [];
+        for (let i = 0; i < dataMovies.length; i++) {
+          const categoryMovies = dataMovies[i];
 
-    // for (let i = 0; i < myArray.length; i++) {
+          for (let y = 0; y < categoryMovies.productCategory.length; y++) {
+            if (categoryId == categoryMovies.productCategory[+y].categoryId) {
+              this.catMov.push(categoryMovies);
+            }
+          }
+        }
+        // console.log("This is: ", categoryId, this.catMov);
 
-    //   console.log(myArray[i]);
-
-    // }
-
-  //   json1 = [
-  //     {id:1, test: 0},
-  //     {id:2, test: 0},
-  //     {id:3, test: 0},
-  //     {id:4, test: 0},
-  //     {id:5, test: 0}
-  // ];
-  
-  // json2 = [
-  //     {id:1, test: 1},
-  //     {id:3, test: 1},
-  //     {id:5, test: 1}
-  // ];
-  
-  // this.movies.map(x => Object.assign(x, this.categories.find(y => y.id == x.categoryId)));
-  // }
-
-
-  // <p>Category: {{movie.productCategory[0].categoryId}}</p>
-  //       <p *ngIf='movie.productCategory[1]'>Category: {{movie.productCategory[1].categoryId}}</p> -->
+        // console.log("There should be 12 Action(5)");
+        // console.log("There should be 10 Thriller(6)");
+        // console.log("There should be 10 Comedy(7)");
+        // console.log("There should be 10 Sci-fi(8)");
 
 
 
 
-  
 
-  
-  // console.log(mergeById(a1, a2));
-}
+        // Subscribe for all categories
+        // this.service.getCategories().subscribe((dataCategories) => {
+        //   this.categories = dataCategories;
+        //   console.log("All categories: ", dataCategories);
+        // });
+
+      });
+
+    });
+
+
+  }
+
+  getCategory(id: number) {
+    this.service.getCategories().subscribe(data => {
+      this.category = data.find(a => a.id === id);
+      // console.log("Whole category: ", this.category);
+    })
+  }
 }

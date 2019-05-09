@@ -1,15 +1,3 @@
-<section class="container-fluid categorySection">
-  <div class="row">
-  <h3 class="col-12 text-center pt-4">Categories</h3>
-  <div class="col-12 text-center pt-4">
-    <button type="button" class="categoryButton btn btn-light btn-sm mx-3">Action</button>
-    <button type="button" class="categoryButton btn btn-light btn-sm mx-3">Thriller</button>
-    <button type="button" class="categoryButton btn btn-light btn-sm mx-3">Comedy</button>
-    <button type="button" class="categoryButton btn btn-light btn-sm mx-3">Sci-fi</button>
-  </div>
-</div>
-</section>
-
 <!-- remove row for footer? -->
 <footer class="container-fluid">
   <div class="row">
@@ -20,3 +8,13 @@
     </div>
   </div>
 </footer>
+
+<section class="container-fluid categorySection">
+    <div class="row">
+      <h3 class="col-12 text-center pt-4">Categories</h3>
+      <div class="col-12 text-center pt-4">
+        <a *ngFor="let category of categories" class="button categoryButton btn btn-light btn-sm mx-3" [routerLink]="['/categories', category.id]"
+          routerLinkActive="active">{{category.id}} {{category.name}}</a>
+      </div>
+    </div>
+  </section>

@@ -1,82 +1,31 @@
-<main class="container-fluid container">
+<main class="container-fluid">
 
-  <!-- <div *ngFor="let randomMovie of random" class="row">
-    <div class="randomMovieFrame col-12"> -->
+  <div *ngFor="let randomMovie of random" class="row">
+    <div class="randomMovieFrame col-12">
 
-      <!-- <img class="randomMoviePoster" src="{{randomMovie.imageUrl}}" alt="{{randomMovie.name}}"> -->
+      <img class="randomMoviePoster" src="{{randomMovie.imageUrl}}" alt="{{randomMovie.name}}">
       <!-- <h4>Id: {{randomMovie.productCategory}}</h4> -->
-    <!-- </div>
-  </div> -->
+    </div>
+  </div>
 
+  <!-- 
   <div *ngFor="let mov of movies">
-   
+
 
     {{mov.name}}
     Id: {{mov.productCategory[0].categoryId}}
     Id: {{mov.productCategory[1].categoryId}}
-    
-  </div>
 
-  <div *ngFor="let cat of categories">
+  </div> -->
+
+  <!-- <div *ngFor="let cat of categories">
     Id {{cat.id}} = {{cat.name}}
-  </div>
+  </div> -->
 
 
 </main>
 
 
-
-<!-- <h4>Name: {{randomMovie.name}}</h4>
-  <p>Year: {{randomMovie.year}}</p>
-  <p>Price: {{randomMovie.price}}</p> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div *ngFor="let movie of movies">
-  <img src="{{movie.imageUrl}}" alt="{{movie.name}}">
-  <h4>Name: {{movie.name}}</h4>
-  <p>Year: {{movie.year}}</p>
-  <p>Price: {{movie.price}}</p>
-
-  <p>Category: {{movie.productCategory[0].categoryId}}</p>
+<!-- <p>Category: {{movie.productCategory[0].categoryId}}</p>
         <p *ngIf='movie.productCategory[1]'>Category: {{movie.productCategory[1].categoryId}}</p> -->
 
-
-
-
-
-<!-- All categories:
-  <div *ngFor="let category of categories">
-    <p>{{category.id}}: {{category.name}}</p>
- -->
-
-
-
-
-<!-- if (movies.productCategory.categoryId = categories.id){
-        console.log(this.categories.name)
-      }else{
-        console.log("no match")
-      } -->
-
-
-
-<!-- <p><p>Category: {{movie.productCategory[0].categoryId}}</p>
-  <p *ngIf='movie.productCategory[1]'>Category: {{movie.productCategory[1].categoryId}}</p> -->

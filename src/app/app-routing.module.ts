@@ -5,9 +5,9 @@ import { SearchComponent } from './search/search.component';
 import { CategoryComponent } from './category/category.component';
 
 const routes: Routes = [
-  { path: 'about', component: HomeComponent },
+
   { path: 'search', component: SearchComponent},
-  { path: 'category', component: CategoryComponent},
+  { path: 'categories/:id', component: CategoryComponent},
   // details
   // { path: 'details/:id', component: DetailsComponent },
   { path: '', component: HomeComponent },

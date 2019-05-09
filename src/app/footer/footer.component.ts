@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ICategories } from '../Interfaces/ICategories';
+import { DataService } from '../Services/data.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  categories: ICategories[];
 
-  ngOnInit() {
+  constructor(private service: DataService) { 
+
   }
 
+  ngOnInit() {
+
+
+    this.service.getCategories().subscribe(
+      (dataCategories) => 
+      { 
+        this.categories = dataCategories; 
+        // console.log(dataCategories);
+      });
+  }
 }
+
+

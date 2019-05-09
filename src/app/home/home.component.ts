@@ -16,42 +16,57 @@ import { ISearch } from '../Interfaces/ISearch';
 })
 export class HomeComponent implements OnInit {
 
-  movies: IMovie[];
-  categories: ICategories[];
   random: IRandom[];
- 
-  
+
+
+  // movies ska flyttas till category sidan
+  // movies: IMovie[]; 
+  // categories: ICategories[];
   // search: ISearch[];
 
 
-
-  // constructor(private service: DataService) { }
   constructor(private service: DataService) { }
   // constructor(private service: MockDataService) { }
 
   ngOnInit() {
 
-    // this.service.getSearch().subscribe(
-    //   (dataSerch) => { this.search = dataSerch, console.log(dataSerch) }
-    // );
 
-
-    this.service.getData().subscribe(
-      (dataMovies) => { this.movies = dataMovies, console.log(dataMovies) }
-    );
-
-    this.service.getCategories().subscribe(
-      (dataCategories) => { this.categories = dataCategories, console.log(dataCategories) }
-    );
 
     this.service.getRandom().subscribe(
       (dataRandom) => { this.random = dataRandom, console.log(dataRandom) }
     );
 
 
-    
+
+    // this.service.getSearch().subscribe(
+    //   (dataSerch) => { this.search = dataSerch, console.log(dataSerch) }
+    // );
+
+
+
+    // movies ska flytta till category sidan!!!
+
+    // this.service.getData().subscribe(
+    //   (dataMovies) => { this.movies = dataMovies, console.log(dataMovies) }
+    // );
+
+
+
+    //flyttad till footer!!!
+
+    // this.service.getCategories().subscribe(
+    //   (dataCategories) => 
+    //   { 
+    //     this.categories = dataCategories; 
+    //     console.log(dataCategories) 
+    //   });
 
     
+
+
+
+
+
 
   }
 }

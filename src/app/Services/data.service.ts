@@ -1,35 +1,63 @@
 import { Injectable } from '@angular/core';
 import { IDataService } from '../Interfaces/IDataService';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { IMovie } from '../Interfaces/IMovie';
 import { ICategories } from '../Interfaces/ICategories';
 import { IRandom } from '../Interfaces/IRandom';
 import { ISearch } from '../Interfaces/ISearch';
+import { Category } from '../Interfaces/Category';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService implements IDataService {
 
+
+
   constructor(private http: HttpClient) { }
 
-  getData(): Observable<IMovie[]>{
+  getData(): Observable<IMovie[]> {
     return this.http.get<IMovie[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/products');
   }
 
-  getCategories(): Observable<ICategories[]>{
-    return this.http.get<ICategories[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/categories');
+  getCategories(): Observable<ICategories[]> {
+    let apiURL = 'https://medieinstitutet-wie-products.azurewebsites.net/api/categories';
+    return this.http.get<ICategories[]>(apiURL);
   }
 
-  getRandom(): Observable<IRandom[]>{
+  getRandom(): Observable<IRandom[]> {
     return this.http.get<IRandom[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/random?number=1');
   }
 
   // getSearch(): Observable<ISearch[]> {
   //   return this.http.get<ISearch[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/search');
   // }
-  
-  
-  
+
+  // categoryList: Category[] = [];
+
+  // getCategory(categoryId: number) {
+  //   this.getData()
+  //     .subscribe((data: Category[]) => {
+  //       for (let i = 0; i < data.length; i++) {
+  //         const category = data[i];
+  //         const catId = data[i].id;
+
+  //         if (catId == categoryId) {
+  //           this.categoryList.push(category);
+  //           console.log(this.categoryList);
+  //         }
+  //       }
+  //     });
+  // }
+
+
+
+
+
+
+
+
+
 }
