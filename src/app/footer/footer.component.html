@@ -1,0 +1,20 @@
+<!-- remove row for footer? -->
+<footer class="container-fluid">
+  <div class="row">
+    <div class="col-12 d-flex justify-content-end socialLogos pt-4">
+      <i class="fab fa-facebook-f px-4 my-auto socialLogoHover"></i>
+      <i class="fab fa-instagram px-4 my-auto socialLogoHover"></i>
+      <i class="fab fa-twitter px-4 my-auto socialLogoHover"></i>
+    </div>
+  </div>
+</footer>
+
+<section class="container-fluid categorySection">
+    <div class="row">
+      <h3 class="col-12 text-center pt-4">Categories</h3>
+      <div class="col-12 text-center pt-4">
+        <a *ngFor="let category of categories" class="button categoryButton btn btn-light btn-sm mx-3" [routerLink]="['/categories', category.id]"
+          routerLinkActive="active">{{category.id}} {{category.name}}</a>
+      </div>
+    </div>
+  </section>
