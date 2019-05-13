@@ -3,8 +3,7 @@ import { IMovie } from '../Interfaces/IMovie';
 import { ICategories } from '../Interfaces/ICategories';
 import { DataService } from '../Services/data.service';
 import { ActivatedRoute } from '@angular/router';
-import { Category } from '../Interfaces/Category';
-import { MockDataService } from '../Services/mock-data.service';
+
 
 @Component({
   selector: 'app-category',
@@ -15,28 +14,28 @@ export class CategoryComponent implements OnInit {
 
   movies: IMovie[];
   categories: ICategories[];
-  category: ICategories;
+  category: ICategories = { id: 0, name: '' };
   categoryMovies: IMovie[];
-  catMov = [];
+  catMov: IMovie[] = [];
 
   constructor(private route: ActivatedRoute, private service: DataService) { }
   
 
   ngOnInit() {
 
-    this.route.params.subscribe(
+    this.route.paramMap.subscribe(
       (myParams) => {
-        let categoryId = myParams['id'];
+        let categoryId = +myParams.get('id');
         // console.log("Router id from footer:", categoryId);
         this.getCategory(+categoryId);
 
-        /* Get all movies, loop then loop productCategory of movie
+        /* Get all movies, loop through then loop productCategory of movie
          * Compare category Id with movie category Id
          * Push to new array */
         this.service.getData().subscribe(
           (dataMovies) => {
             this.movies = dataMovies;
-            console.log("All movies: ", dataMovies);
+            // console.log("All movies: ", dataMovies);
 
             this.catMov = [];
             for (let i = 0; i < dataMovies.length; i++) {
@@ -55,9 +54,6 @@ export class CategoryComponent implements OnInit {
             // console.log("There should be 10 Sci-fi(8)");
 
 
-
-
-
             // Subscribe for all categories
             // this.service.getCategories().subscribe((dataCategories) => {
             //   this.categories = dataCategories;
@@ -65,10 +61,7 @@ export class CategoryComponent implements OnInit {
             // });
 
           });
-
       });
-
-
   }
 
   getCategory(id: number) {

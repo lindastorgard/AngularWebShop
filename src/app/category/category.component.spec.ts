@@ -32,13 +32,15 @@ describe('CategoryComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('Parameter retrieved from url should be 2', () => {
+    for (let i=0; i<component.catMov.length; i++){
+      expect(component.catMov[i].productCategory).toContain({ categoryId: 2, category: 'Thriller' });
+    }
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  
+
+  
 
 
 });
