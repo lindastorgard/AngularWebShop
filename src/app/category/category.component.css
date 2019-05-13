@@ -8,24 +8,24 @@
     top: 0;
     width: 100%;
     height: 760px;
-    /* background-color: black; */
+    background-color: black;
 }
 
 .headingCategory{
     position: absolute;
     top: 15%;
     left: 60%;
-    color: black;
-
+    color: white;
 }
 
 
 
 /* images */
 .categoryMovieFrame{
-    width: 300px;
-    height: 300px;
+    width: 150px;
+    height: 150px;
     overflow: hidden;
+    border: 1px solid white;
 }
 
 .categoryMoviePoster{
@@ -34,7 +34,18 @@
 }
 
 .categoryMargin{
-    margin-top: 20%;
+    margin-top: 12em;
+}
+
+.overlay{
+    color: white;
+    font-size: 3em;;
+    position: absolute;
+    /* padding-top: 20px; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 /* .categoryMovieContainer:hover .overlay {

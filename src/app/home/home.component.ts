@@ -26,16 +26,15 @@ export class HomeComponent implements OnInit {
 
 
   constructor(private service: DataService) { }
-  // constructor(private service: MockDataService) { }
 
   ngOnInit() {
 
-
-
     this.service.getRandom().subscribe(
-      (dataRandom) => { this.random = dataRandom, console.log(dataRandom) }
+      (dataRandom) => { 
+        this.random = dataRandom; 
+        console.log(dataRandom); 
+      }
     );
-
 
 
     // this.service.getSearch().subscribe(
@@ -43,13 +42,11 @@ export class HomeComponent implements OnInit {
     // );
 
 
-
     // movies ska flytta till category sidan!!!
 
     // this.service.getData().subscribe(
     //   (dataMovies) => { this.movies = dataMovies, console.log(dataMovies) }
     // );
-
 
 
     //flyttad till footer!!!
@@ -60,13 +57,6 @@ export class HomeComponent implements OnInit {
     //     this.categories = dataCategories; 
     //     console.log(dataCategories) 
     //   });
-
-    
-
-
-
-
-
 
   }
 }
