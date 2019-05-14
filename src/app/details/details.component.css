@@ -10,7 +10,7 @@ strong{
 /* images */
 .detailsMovieFrame{
     position: absolute;
-    z-index: -1;
+    z-index: -2;
     top: 0;
     right: 0;
     width: 100%;
@@ -24,24 +24,24 @@ strong{
     /* object-position: center; */
 }
 
+.detailsMoviePosterOverlay{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    color:white;
+    font-size: 6rem;
+    z-index: 1;
+}
+
 .detailsColorFrame{
-    background: linear-gradient(to right, rgba(0,0,0,1) 43%, rgba(0,0,0,0.82) 53%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(to right, rgba(0,0,0,1) 65%, rgba(0,0,0,0.82) 79%, rgba(0,0,0,0) 100%);
     /* background: linear-gradient(to right, rgba(0,0,0,1) 53%, rgba(0,0,0,0) 100%); */
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 70%;
     height: 760px;
-}
-
-.detailsColorFrameOverlay{
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    color: white;
-    font-size: 6rem;
-
-
+    z-index: -1;
 }
 
 .detailsText{
