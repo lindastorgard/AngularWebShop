@@ -1,10 +1,41 @@
-<section class="row categoryMargin justify-content-center">
-  <div class="col-10 d-flex flex-wrap justify-content-center categoryMovieContainer">
-    <div class="p-2">
-      <div class="categoryMovieFrame">
-        <img class="categoryMoviePoster" src="{{movie.imageUrl}}" alt="{{movie.name}}">
-        <div class="#">{{movie.price}}{{movie.name}}</div>
+<section class="container-fluid">
+  <div class="row detailsColorFrame">
+    <div class="col-5 detailsText">
+      <h1 class="movieHeading">{{movie.name}}</h1>
+      <i class="fas fa-star movieStar"></i>
+      <i class="fas fa-star movieStar"></i>
+      <i class="fas fa-star movieStar"></i>
+      <i class="fas fa-star movieStar"></i>
+      <div class="d-flex flex-row">
+        <p class="movieSubTextTop">{{movie.year}}</p>
+        <p class="movieSubTextTop">Genre x</p>
       </div>
+      <hr>
+      <button class="button movieButton btn btn-light btn-sm">Watch trailer</button>
+      <button class="button movieButtonAction btn btn-light btn-sm">Buy now {{movie.price}} kr!</button>
+      <hr>
+      <div class="row">
+        <div class="col-5 d-flex flex-row">
+          <p class="movieSubHeading">Genre</p>
+          <p class="movieSubHeading">Year</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-5 d-flex flex-row">
+          <p class="movieSubText">Genre x</p>
+          <p class="movieSubText">{{movie.year}}</p>
+        </div>
+      </div>
+
+      <hr>
+      <p class="movieSubHeading">Description</p>
+      <p class="movieSubText">{{movie.description}}</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-7 detailsMovieFrame">
+      <img class="detailsMoviePoster" src="{{movie.imageUrl}}" alt="{{movie.name}}">
     </div>
   </div>
 </section>
