@@ -36,7 +36,7 @@ export class CategoryComponent implements OnInit {
         this.service.getData().subscribe(
           (dataMovies) => {
             this.movies = dataMovies;
-            // console.log("All movies: ", dataMovies);
+            console.log("All movies: ", dataMovies);
 
             this.catMov = [];
             for (let i = 0; i < dataMovies.length; i++) {
