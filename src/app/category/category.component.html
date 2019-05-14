@@ -16,8 +16,9 @@
   <section class="row categoryMargin justify-content-center">
     <div class="col-10 d-flex flex-wrap justify-content-center categoryMovieContainer">
     <div *ngFor="let myCategories of catMov" class="p-2">
-      <div class="categoryMovieFrame ">
-        <img class="categoryMoviePoster" src="{{myCategories.imageUrl}}" alt="#">
+      <div class="categoryMovieFrame">
+        <a [routerLink]="['/details', myCategories.id]" routerLinkActive="active"><img class="categoryMoviePoster" src="{{myCategories.imageUrl}}" alt="{{myCategories.name}}">
+        </a>
         <!-- <div class="#">{{myCategories.name.price}}{{myCategories.name.name}}</div> -->
       </div>
     </div>

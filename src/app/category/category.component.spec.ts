@@ -4,6 +4,7 @@ import { DataService } from '../Services/data.service';
 import { MockDataService } from '../Services/mock-data.service';
 import { ActivatedRouteStub } from './testing/activateRouteStubs';
 import { ActivatedRoute } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
 
 describe('CategoryComponent', () => {
@@ -21,7 +22,8 @@ describe('CategoryComponent', () => {
       // providers: [{provide: DataService, useClass: MockDataService}],
 
       providers: [{ provide: ActivatedRoute, useValue: activatedRouteStub },
-        { provide: DataService, useClass: MockDataService}]
+        { provide: DataService, useClass: MockDataService}],
+        imports: [ RouterTestingModule ]
     })
     .compileComponents();
   }));
@@ -38,9 +40,10 @@ describe('CategoryComponent', () => {
     }
   });
 
-  
-
-  
-
+  // Denna måste kollas! id is undefined
+  // it('should retrieve one category', () => {
+  //   component.getCategory(5);
+  //   expect(component.category.id).toBe(5);
+  // });
 
 });

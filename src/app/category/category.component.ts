@@ -14,6 +14,7 @@ export class CategoryComponent implements OnInit {
 
   movies: IMovie[];
   categories: ICategories[];
+
   category: ICategories = { id: 0, name: '' };
   categoryMovies: IMovie[];
   catMov: IMovie[] = [];
@@ -26,7 +27,7 @@ export class CategoryComponent implements OnInit {
     this.route.paramMap.subscribe(
       (myParams) => {
         let categoryId = +myParams.get('id');
-        // console.log("Router id from footer:", categoryId);
+        console.log("Router id from footer:", categoryId);
         this.getCategory(+categoryId);
 
         /* Get all movies, loop through then loop productCategory of movie
@@ -53,7 +54,6 @@ export class CategoryComponent implements OnInit {
             // console.log("There should be 10 Comedy(7)");
             // console.log("There should be 10 Sci-fi(8)");
 
-
             // Subscribe for all categories
             // this.service.getCategories().subscribe((dataCategories) => {
             //   this.categories = dataCategories;
@@ -67,7 +67,7 @@ export class CategoryComponent implements OnInit {
   getCategory(id: number) {
     this.service.getCategories().subscribe(data => {
       this.category = data.find(a => a.id === id);
-      // console.log("Whole category: ", this.category);
+      console.log("Whole category: ", this.category);
     })
   }
 }

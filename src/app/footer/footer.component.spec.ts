@@ -29,7 +29,7 @@ describe('FooterComponent', () => {
     fixture.detectChanges();
   });
 
-  it('Parameter in categories to be 2', () => {
+  it('Parameter in categories should be 2', () => {
     for(let i=0; i<component.categories.length; i++){
       expect(component.categories).toContain( { id: 2, name: 'Comedy'});
     }
