@@ -39,7 +39,7 @@ describe('DetailsComponent', () => {
     expect(component.movie.id).toBe(2);
   });
 
-  it('Function getMovie() should retrieve movie with id 2', () => {
+  it('Function getMovie() should retrieve movie with id 4', () => {
     expect(component.movie.id).toEqual(2);
     component.getMovie(4);
     expect(component.movie.id).toEqual(4);

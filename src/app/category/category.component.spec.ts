@@ -5,6 +5,7 @@ import { MockDataService } from '../Services/mock-data.service';
 import { ActivatedRouteStub } from './testing/activateRouteStubs';
 import { ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { toBase64String } from '@angular/compiler/src/output/source_map';
 
 
 describe('CategoryComponent', () => {
@@ -38,7 +39,8 @@ describe('CategoryComponent', () => {
   });
 
   
-  it('should retrieve one category', () => {
+  it('should retrieve category with id 1', () => {
+    expect(component.category.id).toBe(2)
     component.getCategory(1);
     expect(component.category.id).toBe(1);
   });

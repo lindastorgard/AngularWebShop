@@ -34,9 +34,13 @@ describe('AlsolikeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('Function getMovie() should retrieve movie with id 2', () => {
+  it('Parameter retrieved from url should be 2', () => {
+    expect(component.movie.id).toBe(2);
+  });
+
+  it('Function getMovie() should retrieve movie with id 3', () => {
     expect(component.movie.id).toEqual(2);
-    component.getMovie(4);
-    expect(component.movie.id).toEqual(4);
+    component.getMovie(3);
+    expect(component.movie.id).toEqual(3);
   });
 });
