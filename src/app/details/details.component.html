@@ -1,5 +1,5 @@
-<section class="container-fluid">
-  <div class="row detailsColorFrame">
+<main class="container-fluid">
+  <section class="row detailsColorFrame">
     <div class="col-7 detailsText">
       <h1 class="movieHeading">{{movie.name}}</h1>
       <i class="fas fa-star movieStar"></i>
@@ -13,7 +13,8 @@
       </div>
       <hr>
       <button class="button movieButton btn btn-light btn-sm">Watch trailer</button>
-      <button class="button movieButtonAction btn btn-light btn-sm">Buy now <strong>{{movie.price}}</strong> kr!</button>
+      <button class="button movieButtonAction btn btn-light btn-sm">Buy now <strong>{{movie.price}}</strong>
+        kr!</button>
       <hr>
       <div class="row">
         <div class="col-5 d-flex flex-row">
@@ -32,16 +33,16 @@
       <p class="movieSubHeading">Description</p>
       <p class="movieSubText">{{movie.description}}</p>
     </div>
-  </div>
+  </section>
 
-  <div class="row">
+  <section class="row">
     <div class="col-7 detailsMovieFrame">
       <img class="detailsMoviePoster" src="{{movie.imageUrl}}" alt="{{movie.name}}">
       <i class="far fa-play-circle detailsMoviePosterOverlay"></i>
     </div>
-  </div>
-</section>
+  </section>
 
-<section>
+  <section class="alsolike">
     <app-alsolike></app-alsolike>
-</section>
+  </section>
+</main>

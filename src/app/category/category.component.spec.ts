@@ -18,9 +18,6 @@ describe('CategoryComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ CategoryComponent ],
 
-      // Vid test aktivera denna!
-      // providers: [{provide: DataService, useClass: MockDataService}],
-
       providers: [{ provide: ActivatedRoute, useValue: activatedRouteStub },
         { provide: DataService, useClass: MockDataService}],
         imports: [ RouterTestingModule ]
@@ -40,10 +37,10 @@ describe('CategoryComponent', () => {
     }
   });
 
-  // Denna måste kollas! id is undefined
-  // it('should retrieve one category', () => {
-  //   component.getCategory(5);
-  //   expect(component.category.id).toBe(5);
-  // });
+  
+  it('should retrieve one category', () => {
+    component.getCategory(1);
+    expect(component.category.id).toBe(1);
+  });
 
 });

@@ -36,7 +36,7 @@ export class CategoryComponent implements OnInit {
         this.service.getData().subscribe(
           (dataMovies) => {
             this.movies = dataMovies;
-            console.log("All movies: ", dataMovies);
+            // console.log("All movies: ", dataMovies);
 
             this.catMov = [];
             for (let i = 0; i < dataMovies.length; i++) {
@@ -66,8 +66,8 @@ export class CategoryComponent implements OnInit {
 
   getCategory(id: number) {
     this.service.getCategories().subscribe(data => {
+      console.log("Whole category: ", data, ', searching for: ', id);
       this.category = data.find(a => a.id === id);
-      console.log("Whole category: ", this.category);
     })
   }
 }
