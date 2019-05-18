@@ -8,10 +8,9 @@ import { DetailsComponent } from './details/details.component';
 const routes: Routes = [
 
   { path: 'search', component: SearchComponent},
-  { path: 'categories/:id', component: CategoryComponent},
+  { path: 'categories/:id', component: CategoryComponent },
   { path: 'details/:id', component: DetailsComponent },
-  // details
-  // { path: 'details/:id', component: DetailsComponent },
+  { path: 'alsolike/:id', component:DetailsComponent },
   { path: '', component: HomeComponent },
   // { path: '**', component: NotfoundComponent },
 ];

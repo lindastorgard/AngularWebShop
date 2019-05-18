@@ -1,32 +1,31 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { DetailsComponent } from './details.component';
+import { AlsolikeComponent } from './alsolike.component';
 import { ActivatedRoute } from '@angular/router';
-import { ActivatedRouteStub } from '../category/testing/activateRouteStubs';
 import { DataService } from '../Services/data.service';
 import { MockDataService } from '../Services/mock-data.service';
+import { ActivatedRouteStub } from '../category/testing/activateRouteStubs';
 import { RouterTestingModule } from '@angular/router/testing';
-import { AlsolikeComponent } from '../alsolike/alsolike.component';
+import { CategoryComponent } from '../category/category.component';
 
-
-describe('DetailsComponent', () => {
-  let component: DetailsComponent;
-  let fixture: ComponentFixture<DetailsComponent>;
+describe('AlsolikeComponent', () => {
+  let component: AlsolikeComponent;
+  let fixture: ComponentFixture<AlsolikeComponent>;
 
   const activatedRouteStub = new ActivatedRouteStub({ id: 2 });
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [DetailsComponent, AlsolikeComponent],
+      declarations: [ AlsolikeComponent, CategoryComponent ],
 
       providers: [{ provide: ActivatedRoute, useValue: activatedRouteStub },
-      { provide: DataService, useClass: MockDataService }],
+        { provide: DataService, useClass: MockDataService }],
       imports: [RouterTestingModule]
     })
-      .compileComponents();
+    .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DetailsComponent);
+    fixture = TestBed.createComponent(AlsolikeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -39,9 +38,11 @@ describe('DetailsComponent', () => {
     expect(component.movie.id).toBe(2);
   });
 
-  it('Function getMovie() should retrieve movie with id 4', () => {
+  it('Function getMovie() should retrieve movie with id 3', () => {
     expect(component.movie.id).toEqual(2);
-    component.getMovie(4);
-    expect(component.movie.id).toEqual(4);
+    component.getMovie(3);
+    expect(component.movie.id).toEqual(3);
   });
+
+  // test för functionen
 });

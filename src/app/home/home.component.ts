@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
     this.service.getRandom().subscribe(
       (dataRandom) => { 
         this.random = dataRandom; 
-        console.log(dataRandom); 
+        // console.log(dataRandom); 
       }
     );
 

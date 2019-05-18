@@ -125,3 +125,9 @@ hr{
     border: black;
     font-weight: 300;
 }
+
+.alsolike{
+    position: absolute;
+    top: 80%;
+    z-index: 3;
+}

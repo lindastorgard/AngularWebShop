@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../Services/data.service';
 import { IMovie } from '../Interfaces/IMovie';
-import { ICategories } from '../Interfaces/ICategories';
 
 @Component({
   selector: 'app-details',
@@ -12,12 +11,7 @@ import { ICategories } from '../Interfaces/ICategories';
 export class DetailsComponent implements OnInit {
 
   movies: IMovie[];
-  categories: ICategories[];
-
-  category: ICategories = { id: 0, name: '' };
-  categoryMovies: IMovie[];
-  catMov: IMovie[] = [];
-  movie: IMovie = {id: 0, name: '', price: 0, imageUrl: '', description: '', productCategory: []};
+  movie: IMovie = { id: 0, name: '', price: 0, imageUrl: '', description: '', productCategory: [] };
 
   constructor(private route: ActivatedRoute, private service: DataService) { }
 
@@ -26,7 +20,7 @@ export class DetailsComponent implements OnInit {
     this.route.paramMap.subscribe(
       (myParams) => {
         let movieId = +myParams.get('id');
-        console.log("Router id from category:", movieId);
+        // console.log("Router id from category:", movieId);
         this.getMovie(+movieId);
       }
     )
@@ -35,7 +29,7 @@ export class DetailsComponent implements OnInit {
   getMovie(id: number) {
     this.service.getData().subscribe(data => {
       this.movie = data.find(a => a.id === id);
-      console.log("My movie details: ", this.movie);
+      // console.log("My movie details: ", this.movie);
     })
   }
 

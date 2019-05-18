@@ -11,6 +11,7 @@ import { CategoryComponent } from './category/category.component';
 import { SearchComponent } from './search/search.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { DetailsComponent } from './details/details.component';
+import { AlsolikeComponent } from './alsolike/alsolike.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { DetailsComponent } from './details/details.component';
     CategoryComponent,
     SearchComponent,
     CheckoutComponent,
-    DetailsComponent
+    DetailsComponent,
+    AlsolikeComponent
   ],
   imports: [
     BrowserModule,
