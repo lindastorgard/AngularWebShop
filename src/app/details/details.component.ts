@@ -20,7 +20,7 @@ export class DetailsComponent implements OnInit {
     this.route.paramMap.subscribe(
       (myParams) => {
         let movieId = +myParams.get('id');
-        console.log("Router id from category:", movieId);
+        // console.log("Router id from category:", movieId);
         this.getMovie(+movieId);
       }
     )
@@ -29,7 +29,7 @@ export class DetailsComponent implements OnInit {
   getMovie(id: number) {
     this.service.getData().subscribe(data => {
       this.movie = data.find(a => a.id === id);
-      console.log("My movie details: ", this.movie);
+      // console.log("My movie details: ", this.movie);
     })
   }
 
