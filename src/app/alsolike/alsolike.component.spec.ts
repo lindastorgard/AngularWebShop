@@ -43,4 +43,6 @@ describe('AlsolikeComponent', () => {
     component.getMovie(3);
     expect(component.movie.id).toEqual(3);
   });
+
+  // test för functionen
 });

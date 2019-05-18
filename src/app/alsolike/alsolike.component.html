@@ -1,12 +1,13 @@
 <div class="row alsolikeMargin justify-content-center">
-    <div class="col-10 d-flex flex-wrap justify-content-center alsolikeMovieContainer">
-      <hr>
-      <h1>You may also like</h1>
-      <div *ngFor="let myAlsolike of alsolikeMov" class="p-2">
-        <div class="alsolikeMovieFrame">
-          <img class="alsolikeMoviePoster"
-              src="{{myAlsolike.imageUrl}}" alt="{{myAlsolike.name}}">
-        </div>
+  <div class="col-10 d-flex flex-wrap justify-content-center alsolikeMovieContainer">
+    <hr>
+    <h1>You may also like</h1>
+    <div *ngFor="let myAlsolike of alsolikeMov" class="p-2">
+      <div class="alsolikeMovieFrame">
+        <a [routerLink]="['/alsolike', myAlsolike.id]" routerLinkActive="active"><img class="alsolikeMoviePoster"
+            src="{{myAlsolike.imageUrl}}" alt="{{myAlsolike.name}}">
+        </a>
       </div>
     </div>
   </div>
+</div>

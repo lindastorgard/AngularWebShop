@@ -18,11 +18,11 @@ export class AlsolikeComponent implements OnInit {
   categoryMovies: IMovie[];
   movie: IMovie = { id: 0, name: '', price: 0, imageUrl: '', description: '', productCategory: [] };
   alsolikeMov: IMovie[] = [];
+  finalMovieArray: IMovie[] = [];
 
   constructor(private route: ActivatedRoute, private service: DataService) { }
 
   ngOnInit() {
-
 
     this.route.paramMap.subscribe(
       (myParams) => {
@@ -33,9 +33,8 @@ export class AlsolikeComponent implements OnInit {
         this.service.getData().subscribe(
           (dataMovies) => {
             this.movies = dataMovies;
-            console.log("All movies: ", dataMovies);
-
-            console.log(this.movie.productCategory[0].categoryId);
+            // console.log("All movies: ", dataMovies);
+            // console.log(this.movie.productCategory[0].categoryId);
 
             this.alsolikeMov = [];
             for (let i = 0; i < dataMovies.length; i++) {
@@ -46,8 +45,18 @@ export class AlsolikeComponent implements OnInit {
                 }
               }
             }
-            // console.log("new", categoryAlsoLikeMovies.name);
-            console.log("This is category movie array", this.alsolikeMov);
+            // Remove the details movie from alsolike-list
+            for (let z = 0; z < this.alsolikeMov.length; z++) {
+              if (movieId == this.alsolikeMov[+z].id) {
+                this.alsolikeMov.splice(z, 1);
+              }
+            }
+            // console.log("New category movie array", this.alsolikeMov);
+            // console.log("Final category movie array", this.finalMovieArray);
+            // console.log("This is my movie", this.movie.id);
+            // console.log("This is movie from array", categoryAlsoLikeMovies.id);
+            // console.log("New category movie array", this.alsolikeMov);
+            // console.log("move array:", this.finalMovieArray);
           });
       }
     )
@@ -56,7 +65,7 @@ export class AlsolikeComponent implements OnInit {
   getMovie(id: number) {
     this.service.getData().subscribe(data => {
       this.movie = data.find(a => a.id === id);
-      // console.log("My movie details: ", this.movie);
+      // console.log("This movie details: ", this.movie.id);
       // console.log(this.movie.productCategory[0].categoryId);
     })
   }
