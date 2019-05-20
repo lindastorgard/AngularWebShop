@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { ICategories } from '../Interfaces/ICategories';
 import { DataService } from '../Services/data.service';
-
+import { ICategories } from '../Interfaces/ICategories';
 
 @Component({
-  selector: 'app-footer',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.css']
+  selector: 'app-footer2',
+  templateUrl: './footer2.component.html',
+  styleUrls: ['./footer2.component.css']
 })
-export class FooterComponent implements OnInit {
+export class Footer2Component implements OnInit {
 
   categories: ICategories[];
 
@@ -17,12 +16,9 @@ export class FooterComponent implements OnInit {
   ngOnInit() {
 
     this.service.getCategories().subscribe(
-      (dataCategories) => 
-      { 
-        this.categories = dataCategories; 
+      (dataCategories) => {
+        this.categories = dataCategories;
         // console.log(dataCategories);
       });
   }
 }
-
-

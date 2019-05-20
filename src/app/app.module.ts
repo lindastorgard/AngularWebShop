@@ -12,6 +12,7 @@ import { SearchComponent } from './search/search.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { DetailsComponent } from './details/details.component';
 import { AlsolikeComponent } from './alsolike/alsolike.component';
+import { Footer2Component } from './footer2/footer2.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AlsolikeComponent } from './alsolike/alsolike.component';
     SearchComponent,
     CheckoutComponent,
     DetailsComponent,
-    AlsolikeComponent
+    AlsolikeComponent,
+    Footer2Component
   ],
   imports: [
     BrowserModule,

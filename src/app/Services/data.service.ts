@@ -6,15 +6,12 @@ import { IMovie } from '../Interfaces/IMovie';
 import { ICategories } from '../Interfaces/ICategories';
 import { IRandom } from '../Interfaces/IRandom';
 import { ISearch } from '../Interfaces/ISearch';
-import { Category } from '../Interfaces/Category';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService implements IDataService {
-
-
 
   constructor(private http: HttpClient) { }
 
@@ -33,23 +30,6 @@ export class DataService implements IDataService {
 
   // getSearch(): Observable<ISearch[]> {
   //   return this.http.get<ISearch[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/search');
-  // }
-
-  // categoryList: Category[] = [];
-
-  // getCategory(categoryId: number) {
-  //   this.getData()
-  //     .subscribe((data: Category[]) => {
-  //       for (let i = 0; i < data.length; i++) {
-  //         const category = data[i];
-  //         const catId = data[i].id;
-
-  //         if (catId == categoryId) {
-  //           this.categoryList.push(category);
-  //           console.log(this.categoryList);
-  //         }
-  //       }
-  //     });
   // }
 
 

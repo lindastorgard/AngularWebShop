@@ -1,33 +1,9 @@
-<main class="container-fluid">
+<main class="container-fluid pageContainer">
   <div class="row">
     <div class="pageFrame col-12">
       <h1>{{category.name}}</h1>
     </div>
   </div>
-
-  <!-- <section class="row categoryMargin justify-content-center">
-    <div class="col-10 d-flex flex-wrap">
-      <div *ngFor="let myCategories of catMov" class="p-2 row">
-        <div class="col-12 card" style="width: 10rem;">
-          <a [routerLink]="['/details', myCategories.id]" routerLinkActive="active"><img class="card-img-top"
-              src="{{myCategories.imageUrl}}" alt="{{myCategories.name}}">
-          </a>
-          <div class="card-body">
-            <h5 class="card-title cardHeading">{{myCategories.name}}</h5>
-            <div class="row">
-              <div class="d-flex flex-row">
-                <p class="card-text cardText">{{myCategories.year}}</p>
-                <p class="card-text cardText">|</p>
-                <p class="card-text cardText">{{category.name}}</p>
-              </div>
-            </div>
-            <a href="#" class="btn btn-primary catMovButton">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
-
 
   <section class="row categoryMargin justify-content-center">
     <div class="col-10 d-flex flex-wrap justify-content-center categoryMovieContainer">
@@ -36,10 +12,10 @@
           <a [routerLink]="['/details', myCategories.id]" routerLinkActive="active"><img class="categoryMoviePoster"
               src="{{myCategories.imageUrl}}" alt="{{myCategories.name}}">
           </a>
-
         </div>
-        <!-- <div class="#">{{myCategories.price}}{{myCategories.name}}</div> -->
       </div>
     </div>
   </section>
 </main>
+
+<app-footer2></app-footer2>
