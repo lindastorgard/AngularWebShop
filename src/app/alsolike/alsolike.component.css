@@ -3,10 +3,6 @@
     padding: 0;
 }
 
-/* .alsolikeMovieContainer{
-    margin-top: 2%
-} */
-
 .pageFrame{
     position: absolute;
     top: 80%;
@@ -16,15 +12,17 @@
 }
 
 h1{
-    position: absolute;
+    /* position: absolute; */
+    width: 100%;
+    padding: 2em 0em 1em 2em;
     font-weight: 100;
-    font-size: 2.8rem;
-    top: 15%;
-    left: 60%;
+    font-size: 2.5rem;
+    /* top: 15%;
+    left: 60%; */
     color: white;
 }
 
-.wrapper{
+.alsolikeFrame{
     margin-top: 5em;
 }
 
@@ -34,6 +32,10 @@ hr{
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     width: 100%;
+}
+
+.alsolikeMargin{
+    margin-left: 4em;
 }
 
 
@@ -50,8 +52,4 @@ hr{
 .alsolikeMoviePoster{
     width: 100%;
     object-fit: cover;
-}
-
-.alsolikeMargin{
-    margin-top: 12em;
 }
