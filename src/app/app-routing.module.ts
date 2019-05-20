@@ -7,10 +7,11 @@ import { DetailsComponent } from './details/details.component';
 
 const routes: Routes = [
 
-  { path: 'search', component: SearchComponent},
+  // { path: 'search', component: SearchComponent},
   { path: 'categories/:id', component: CategoryComponent },
   { path: 'details/:id', component: DetailsComponent },
   { path: 'alsolike/:id', component:DetailsComponent },
+  { path: 'home', component: HomeComponent },
   { path: '', component: HomeComponent },
   // { path: '**', component: NotfoundComponent },
 ];
