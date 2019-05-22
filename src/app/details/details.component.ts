@@ -40,15 +40,15 @@ export class DetailsComponent implements OnInit {
       this.movie = data.find(a => a.id === id);
       // console.log("My add to cart details: ", this.movie);
 
-      if (localStorage.getItem("myStoredItems") == null) {
-        localStorage.setItem("myStoredItems", JSON.stringify(this.movie));
-        // console.log("Movie from localStorage", JSON.parse(localStorage.getItem("myStoredItems")));
+      if (sessionStorage.getItem("myStoredItems") == null) {
+        sessionStorage.setItem("myStoredItems", JSON.stringify(this.movie));
+        // console.log("Movie from sessionStorage", JSON.parse(sessionStorage.getItem("myStoredItems")));
       } else {
         let myStoredItemsList = [];
-        myStoredItemsList = JSON.parse(localStorage.getItem("myStoredItems"));
+        myStoredItemsList = JSON.parse(sessionStorage.getItem("myStoredItems"));
         myStoredItemsList.push(this.movie);
-        localStorage.setItem("myStoredItems", JSON.stringify(myStoredItemsList));
-        console.log("Movies from localStorage", JSON.parse(localStorage.getItem("myStoredItems")));
+        sessionStorage.setItem("myStoredItems", JSON.stringify(myStoredItemsList));
+        console.log("Movies from sessionStorage", JSON.parse(sessionStorage.getItem("myStoredItems")));
       }
     });
   }
