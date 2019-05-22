@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.pageframe{
+    background-color: black;
+}
+
+.checkoutFrame{
+    background-color: white;
+    margin-top: 10em;
+    padding: 5em;
+}

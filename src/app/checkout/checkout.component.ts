@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IMovie } from '../Interfaces/IMovie';
 
 @Component({
   selector: 'app-checkout',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckoutComponent implements OnInit {
 
+  myCart: IMovie[] = [];
+
   constructor() { }
 
   ngOnInit() {
+
+    if (sessionStorage) {
+      this.myCart = JSON.parse(sessionStorage.getItem("myStoredItems"));
+      console.log(this.myCart);
+    }
   }
 
 }
