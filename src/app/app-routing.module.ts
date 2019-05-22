@@ -5,6 +5,7 @@ import { SearchComponent } from './search/search.component';
 import { CategoryComponent } from './category/category.component';
 import { DetailsComponent } from './details/details.component';
 import { CartComponent } from './cart/cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 const routes: Routes = [
 
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'alsolike/:id', component:DetailsComponent },
   { path: 'home', component: HomeComponent },
   { path: 'cart/:id', component: CartComponent },
+  { path: 'checkout', component: CheckoutComponent },
   { path: '', component: HomeComponent },
   // { path: '**', component: NotfoundComponent },
 ];
