@@ -4,7 +4,6 @@ import { IMovie } from '../Interfaces/IMovie';
 import { Observable, of } from 'rxjs';
 import { ICategories } from '../Interfaces/ICategories';
 import { IRandom } from '../Interfaces/IRandom';
-import { ISearch } from '../Interfaces/ISearch';
 import { ICart } from '../Interfaces/ICart';
 
 @Injectable({
@@ -49,9 +48,17 @@ export class MockDataService implements IDataService {
   // mock-data for addToCart
   // För att skapa ordrar, gör en POST-request mot /orders-apiet och lägg med objekt med följande struktur i anropet:
 
+  // cartItems: ICart[] = [
+  //   {id: 547, price: 169 }
+  // ];
+
   cartItems: ICart[] = [
-    {id: 547, companyId: 16, created: '0001-01-01T00:00:00', createdBy: 0, paymentMethod: 0, totalPrice: 169, status: 0, orderRows: [{ ProductId: 1, Amount: 3 }] }
+    {companyId: 16, created: '0001-01-01T00:00:00', createdBy: null, paymentMethod: null, totalPrice: 169, status: 0, orderRows: [{ ProductId: 1, Amount: 1 }] }
   ];
+
+  saveCart(): Observable<ICart[]> {
+    return of(this.cartItems);
+  }
 
   // mock-data for search
   // search: ISearch[] = [

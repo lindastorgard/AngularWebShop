@@ -13,6 +13,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { DetailsComponent } from './details/details.component';
 import { AlsolikeComponent } from './alsolike/alsolike.component';
 import { Footer2Component } from './footer2/footer2.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { Footer2Component } from './footer2/footer2.component';
     CheckoutComponent,
     DetailsComponent,
     AlsolikeComponent,
-    Footer2Component
+    Footer2Component,
+    CartComponent
   ],
   imports: [
     BrowserModule,

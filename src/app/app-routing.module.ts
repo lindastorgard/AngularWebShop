@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
 import { CategoryComponent } from './category/category.component';
 import { DetailsComponent } from './details/details.component';
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
 
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'details/:id', component: DetailsComponent },
   { path: 'alsolike/:id', component:DetailsComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'cart/:id', component: CartComponent },
   { path: '', component: HomeComponent },
   // { path: '**', component: NotfoundComponent },
 ];

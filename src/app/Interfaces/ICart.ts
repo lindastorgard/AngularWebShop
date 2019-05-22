@@ -1,11 +1,11 @@
 import { IOrderRows } from './IOrderRows';
 
 export interface ICart{
-    id: number, 
+    // id: number, 
     companyId: number, 
     created: string, 
-    createdBy: number, 
-    paymentMethod: number, 
+    createdBy: string, 
+    paymentMethod: string, 
     totalPrice: number, 
     status: number, 
     orderRows: IOrderRows[];

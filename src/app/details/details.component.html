@@ -13,7 +13,11 @@
       </div>
       <hr>
       <button class="button movieButton btn btn-light btn-sm">Watch trailer</button>
-      <button class="button movieButtonAction btn btn-light btn-sm">Buy now <strong>{{movie.price}}</strong>
+      <!-- <a class="button movieButtonAction btn btn-light btn-sm" [routerLink]="['/cart', movie.id]" routerLinkActive="active">Buy now
+          <strong>{{movie.price}}</strong>
+          kr!</a> -->
+      <button class="button movieButtonAction btn btn-light btn-sm" (click)="addToCart(movie.id)">Buy now
+        <strong>{{movie.price}}</strong>
         kr!</button>
       <hr>
       <div class="row">

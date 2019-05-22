@@ -6,6 +6,7 @@ import { IMovie } from '../Interfaces/IMovie';
 import { ICategories } from '../Interfaces/ICategories';
 import { IRandom } from '../Interfaces/IRandom';
 import { ISearch } from '../Interfaces/ISearch';
+import { ICart } from '../Interfaces/ICart';
 
 
 @Injectable({
@@ -27,6 +28,9 @@ export class DataService implements IDataService {
   getRandom(): Observable<IRandom[]> {
     return this.http.get<IRandom[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/random?number=1');
   }
+
+  
+  
 
   // getSearch(): Observable<ISearch[]> {
   //   return this.http.get<ISearch[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/search');
