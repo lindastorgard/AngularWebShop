@@ -1,4 +1,4 @@
-export interface IOrderRows {
+export interface IOrderRow {
     ProductId: number,
     Amount: number
 }
