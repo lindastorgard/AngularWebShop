@@ -6,6 +6,7 @@ import { ActivatedRouteStub } from './testing/activateRouteStubs';
 import { ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { toBase64String } from '@angular/compiler/src/output/source_map';
+import { Footer2Component } from '../footer2/footer2.component';
 
 
 describe('CategoryComponent', () => {
@@ -17,7 +18,7 @@ describe('CategoryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CategoryComponent ],
+      declarations: [ CategoryComponent, Footer2Component ],
 
       providers: [{ provide: ActivatedRoute, useValue: activatedRouteStub },
         { provide: DataService, useClass: MockDataService}],

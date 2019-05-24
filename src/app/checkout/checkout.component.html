@@ -1,14 +1,38 @@
 <div class="container-fluid pageframe">
   <div class="row">
     <div class="col-12 d-flex justify-content-center">
-      <div class="col-8 d-flex justify-content-center checkoutFrame">
-        <div>
-          <h1>{{myCart.name}}</h1>
-          <p>{{myCart.description}}</p>
-          <p>{{myCart.price}}</p>
-          
+      <div class="col-8 checkoutFrame">
+        <h1>Checkout</h1>
+        <p class="text">{{now}}</p>
+        <h3 *ngIf="!myCart">Your cart is empty!</h3>
+        <div *ngFor="let cart of myCart">
+          <div class="margin">
+            <img class="imageSize" src="{{cart.imageUrl}}" alt="{{cart.name}}">
+            <h2>{{cart.name}}</h2>
+            <p class="text">{{cart.description}}</p>
+            <p class="text">{{cart.price}}</p>
+          </div>
+          <hr>
         </div>
+        <div>
+          <form (ngSubmit)="createOrder()">
+            <p class="formText">Enter your details:</p>
+            <p class="text">E-mail:
+              <input type="text" [formControl]="checkoutEmail" />
+            </p>
+            <button type="submit" class="button checkoutButton btn btn-light btn-sm">Checkout</button>
+          </form>
 
+          <!-- <form [formGroup]="group" (ngSubmit)="createOrder()">
+            <p>Name:
+              <input type="text" formControlName="name">
+            </p>
+            <p>E-mail:
+              <input type="text" formControlName="email">
+            </p> -->
+            <!-- <button type="submit">Send</button> -->
+          <!-- </form> -->
+        </div>
 
       </div>
     </div>

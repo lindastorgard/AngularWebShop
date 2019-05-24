@@ -6,6 +6,7 @@ import { MockDataService } from '../Services/mock-data.service';
 import { ActivatedRouteStub } from '../category/testing/activateRouteStubs';
 import { RouterTestingModule } from '@angular/router/testing';
 import { CategoryComponent } from '../category/category.component';
+import { Footer2Component } from '../footer2/footer2.component';
 
 describe('AlsolikeComponent', () => {
   let component: AlsolikeComponent;
@@ -15,7 +16,7 @@ describe('AlsolikeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AlsolikeComponent, CategoryComponent ],
+      declarations: [ AlsolikeComponent, CategoryComponent, Footer2Component ],
 
       providers: [{ provide: ActivatedRoute, useValue: activatedRouteStub },
         { provide: DataService, useClass: MockDataService }],
