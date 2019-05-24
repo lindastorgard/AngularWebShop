@@ -9,7 +9,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link navLink" routerLink="/" routerLinkActive="active" href="#">Home <span
+        <a class="nav-link navLink" [routerLink]="['/home']"routerLinkActive="active" href="#">Home <span
             class="sr-only">(current)</span></a>
       </li>
       <!-- <li class="nav-item">
@@ -31,11 +31,13 @@
         aria-haspopup="true" aria-expanded="false"><i class="fas fa-shopping-cart px-3 navIcons"></i>
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <div class="dropdown-item">
+          <h1 *ngIf="!myCart">Your cart is empty.</h1>
+        <div  class="dropdown-item" *ngFor="let cart of myCart">
+          
 
-          <img class="headerDropdownPic" src="{{myCart.imageUrl}}" alt="{{myCart.name}}">
-          <h2 class="headerDropdownTitle">{{myCart.name}}</h2>
-          <p class="headerDropdownPrice">Price: {{myCart.price}}</p>
+          <!-- <img  class="headerDropdownPic" src="{{cart.imageUrl}}" alt="{{myCart.name}}"> -->
+          <h2 *ngIf="myCart" class="headerDropdownTitle">{{cart.name}}</h2>
+          <p *ngIf="myCart" class="headerDropdownPrice">Price: {{cart.price}}</p>
         </div>
 
         <!-- <a class="dropdown-item" href="#">Another action</a> -->
