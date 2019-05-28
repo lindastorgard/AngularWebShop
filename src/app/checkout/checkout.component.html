@@ -2,9 +2,9 @@
   <div class="row">
     <div class="col-12 d-flex justify-content-center">
       <div class="col-8 checkoutFrame">
-        <h1>Checkout</h1>
+        <h1>Cart</h1>
         <p class="text">{{now}}</p>
-        <h3 *ngIf="!myCart">Your cart is empty!</h3>
+        <h3 *ngIf="!myCart">Your cart is empty. Start browsing your favourite movies now.</h3>
         <div *ngFor="let cart of myCart">
           <div class="margin">
             <img class="imageSize" src="{{cart.imageUrl}}" alt="{{cart.name}}">
@@ -15,7 +15,7 @@
           <hr>
         </div>
 
-        <form [formGroup]="checkoutDetails" (ngSubmit)="setOrder()">
+        <form [formGroup]="formDetails" (ngSubmit)="setOrder()">
           <p class="formText">Enter your details:</p>
           <p class="text">Upon payment we will send an access key to the e-mail adress entered below. The key will give
             you a 2-day access to your movies.</p>
@@ -33,13 +33,13 @@
           </label><br>
 
           <button type="submit" class="button checkoutButton btn btn-light btn-sm"
-            [disabled]="!checkoutDetails.valid">Go to checkout</button>
+            [disabled]="!formDetails.valid">Checkout</button>
 
-          <p *ngIf="!checkoutDetails.valid" class="text">* required fields
-            <!-- Form Status: {{checkoutDetails.status}} -->
+          <p *ngIf="!formDetails.valid" class="text">* required fields
+            <!-- Form Status: {{formDetails.status}} -->
           </p>
-          <!-- <p>value: {{checkoutDetails.value.email}}</p>
-          <p>email valid: {{checkoutDetails.get('email').valid}}</p> -->
+          <!-- <p>value: {{formDetails.value.email}}</p>
+          <p>email valid: {{formDetails.get('email').valid}}</p> -->
         </form>
 
       </div>

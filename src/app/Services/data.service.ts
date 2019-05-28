@@ -31,8 +31,8 @@ export class DataService implements IDataService {
     return this.http.get<IRandom[]>(apiURL);
   }
 
-  createOrder(checkoutItems: ICart[]){
-    return this.http.post('https://medieinstitutet-wie-products.azurewebsites.net/api/orders', checkoutItems);
+  createOrder(items: ICart){
+    return this.http.post('https://medieinstitutet-wie-products.azurewebsites.net/api/orders', items);
   }
 
   
