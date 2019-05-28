@@ -14,25 +14,33 @@
           </div>
           <hr>
         </div>
-        <div>
-          <form (ngSubmit)="createOrder()">
-            <p class="formText">Enter your details:</p>
-            <p class="text">E-mail:
-              <input type="text" [formControl]="checkoutEmail" />
-            </p>
-            <button type="submit" class="button checkoutButton btn btn-light btn-sm">Checkout</button>
-          </form>
 
-          <!-- <form [formGroup]="group" (ngSubmit)="createOrder()">
-            <p>Name:
-              <input type="text" formControlName="name">
-            </p>
-            <p>E-mail:
-              <input type="text" formControlName="email">
-            </p> -->
-            <!-- <button type="submit">Send</button> -->
-          <!-- </form> -->
-        </div>
+        <form [formGroup]="checkoutDetails" (ngSubmit)="setOrder()">
+          <p class="formText">Enter your details:</p>
+          <p class="text">Upon payment we will send an access key to the e-mail adress entered below. The key will give
+            you a 2-day access to your movies.</p>
+
+          <label for="firstname" class="text">First Name
+            <input type="text" placeholder=" *" formControlName="firstname" required>
+          </label><br>
+
+          <label for="lastname" class="text">Last Name
+            <input type="text" placeholder=" *" formControlName="lastname" required>
+          </label><br>
+
+          <label for=email class="text">Email
+            <input type="email" placeholder=" *" formControlName="email" required />
+          </label><br>
+
+          <button type="submit" class="button checkoutButton btn btn-light btn-sm"
+            [disabled]="!checkoutDetails.valid">Go to checkout</button>
+
+          <p *ngIf="!checkoutDetails.valid" class="text">* required fields
+            <!-- Form Status: {{checkoutDetails.status}} -->
+          </p>
+          <!-- <p>value: {{checkoutDetails.value.email}}</p>
+          <p>email valid: {{checkoutDetails.get('email').valid}}</p> -->
+        </form>
 
       </div>
     </div>
