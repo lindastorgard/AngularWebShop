@@ -13,7 +13,6 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { DetailsComponent } from './details/details.component';
 import { AlsolikeComponent } from './alsolike/alsolike.component';
 import { Footer2Component } from './footer2/footer2.component';
-import { CartComponent } from './cart/cart.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -27,8 +26,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CheckoutComponent,
     DetailsComponent,
     AlsolikeComponent,
-    Footer2Component,
-    CartComponent
+    Footer2Component
   ],
   imports: [
     BrowserModule,
