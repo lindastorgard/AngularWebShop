@@ -56,7 +56,7 @@ export class AlsolikeComponent implements OnInit {
             // console.log("This is my movie", this.movie.id);
             // console.log("This is movie from array", categoryAlsoLikeMovies.id);
             // console.log("New category movie array", this.alsolikeMov);
-            // console.log("move array:", this.finalMovieArray);
+            
           });
       }
     )

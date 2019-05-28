@@ -24,11 +24,11 @@ export class HeaderComponent implements OnInit {
 
     this.messageService.messageInCart.subscribe(data => {
       this.message = data;
-      console.log(data);
+      // console.log(data);
 
       if (data == true) {
         this.myCart = JSON.parse(sessionStorage.getItem("myStoredItems"));
-        console.log(this.myCart);
+        // console.log(this.myCart);
       }
     });
   }

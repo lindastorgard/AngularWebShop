@@ -31,11 +31,31 @@ export class DetailsComponent implements OnInit {
     )
   }
 
-  addToCart(id: number) {
+  // addToCart(id: number) {
+
+  //   this.service.getData().subscribe(data => {
+  //     this.movie = data.find(a => a.id === id);
+  //     // console.log("My add to cart details: ", this.movie);
+
+  //     if (sessionStorage.getItem("myStoredItems") == null) {
+  //       sessionStorage.setItem("myStoredItems", JSON.stringify([this.movie]));
+  //       // console.log("Movie from sessionStorage", JSON.parse(sessionStorage.getItem("myStoredItems")));
+  //     } else {
+  //       let myStoredItemsList: IMovie[] = [];
+  //       myStoredItemsList = JSON.parse(sessionStorage.getItem("myStoredItems"));
+  //       myStoredItemsList.push(this.movie);
+  //       sessionStorage.setItem("myStoredItems", JSON.stringify(myStoredItemsList));
+  //       console.log("Movies from sessionStorage", JSON.parse(sessionStorage.getItem("myStoredItems")));
+  //     }
+
+  //     this.messageService.setMessage(true);
+  //   });
+  // }
+
+  addToCart(movieId: number) {
 
     this.service.getData().subscribe(data => {
-      this.movie = data.find(a => a.id === id);
-      // console.log("My add to cart details: ", this.movie);
+      this.movie = data.find(a => a.id === movieId);
 
       if (sessionStorage.getItem("myStoredItems") == null) {
         sessionStorage.setItem("myStoredItems", JSON.stringify([this.movie]));
@@ -43,14 +63,21 @@ export class DetailsComponent implements OnInit {
       } else {
         let myStoredItemsList: IMovie[] = [];
         myStoredItemsList = JSON.parse(sessionStorage.getItem("myStoredItems"));
-        myStoredItemsList.push(this.movie);
-        sessionStorage.setItem("myStoredItems", JSON.stringify(myStoredItemsList));
-        console.log("Movies from sessionStorage", JSON.parse(sessionStorage.getItem("myStoredItems")));
-      }
+        console.log("movie list from storage: ", myStoredItemsList);
+        // console.log("movie id: ", this.movie.id);
 
+        for (let i = 0; i < myStoredItemsList.length; i++) {
+          if (myStoredItemsList[i].id !== this.movie.id) {
+            myStoredItemsList.push(this.movie);
+            sessionStorage.setItem("myStoredItems", JSON.stringify(myStoredItemsList));
+          }
+        }
+      }
+      console.log("Movies from sessionStorage", JSON.parse(sessionStorage.getItem("myStoredItems")));
       this.messageService.setMessage(true);
     });
   }
+
 
 
   getMovie(id: number) {
