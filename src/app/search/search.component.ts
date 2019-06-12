@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../Services/data.service';
+import { IMovie } from '../Interfaces/IMovie';
+import { Observable, Subject } from 'rxjs';
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators'
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -8,11 +13,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
+  movies: Observable<IMovie[]>;
+  private searchTerms = new Subject<string>();
+  // term: string;
+  // searchData: IMovie[];
+
+  constructor(private service: DataService, private router: Router) { }
+
+  search(term: string): void{
+    this.searchTerms.next(term);
+  }
+
   
 
-  constructor() { }
+  ngOnInit(): void {
 
-  ngOnInit() {
+    // this.movies = this.searchTerms.pipe(
+    //   debounceTime(300),
+    //   distinctUntilChanged(),
+    //   switchMap((term: string) => this.service.searchMovies(term)),
+      
+    // );
+    console.log(this.movies);
+
+
 
     
 
