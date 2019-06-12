@@ -1,50 +1,54 @@
-<div class="container-fluid pageframe">
+<main class="container-fluid pageframe">
   <div class="row">
     <div class="col-12 d-flex justify-content-center">
-      <div class="col-8 checkoutFrame">
-        <h1>Cart</h1>
-        <p class="text">{{now}}</p>
-        <h3 *ngIf="!myCart">Your cart is empty. Start browsing your favourite movies now.</h3>
-        <div *ngFor="let cart of myCart">
+      <div class="col-10 col-sm-8 col-md-6 checkoutFrame">
+
+        <section>
+          <h1>Cart</h1>
+          <p class="text">{{now | date:'M/d/yyyy HH:mm:ss'}}</p>
+          <h3>{{cartMessage}}</h3>
+        </section>
+
+        <section *ngFor="let cart of myCart">
           <div class="margin">
             <img class="imageSize" src="{{cart.imageUrl}}" alt="{{cart.name}}">
             <h2>{{cart.name}}</h2>
             <p class="text">{{cart.description}}</p>
-            <p class="text">{{cart.price}}</p>
+            <p class="text">Price: {{cart.price}} sek</p>
+            <button (click)="deleteCartItem(cart.id)" class="button deleteButton btn btn-light btn-sm">Remove</button>
           </div>
           <hr>
-        </div>
+        </section>
 
-        <form [formGroup]="formDetails" (ngSubmit)="setOrder()">
+        <form [formGroup]="formDetails" [ngClass]="{'notActive': isCartActive}" (ngSubmit)="setOrder()">
+          <h2 class="totalAmount">Total amount: {{totalAmount}} sek</h2>
           <p class="formText">Enter your details:</p>
-          <p class="text">Upon payment we will send an access key to the e-mail adress entered below. The key will give
+          <p class="text2">Upon payment we will send an access key to the e-mail adress entered below. The key will
+            give
             you a 2-day access to your movies.</p>
 
           <label for="firstname" class="text">First Name
-            <input type="text" placeholder=" *" formControlName="firstname" required>
+            <input type="text" placeholder=" *" formControlName="firstname" required/>
           </label><br>
 
           <label for="lastname" class="text">Last Name
-            <input type="text" placeholder=" *" formControlName="lastname" required>
+            <input type="text" placeholder=" *" formControlName="lastname" required/>
           </label><br>
 
-          <label for=email class="text">Email
-            <input type="email" placeholder=" *" formControlName="email" required />
+          <label for="email" class="text">Email
+            <input type="email" placeholder=" *" formControlName="email" required/>
           </label><br>
 
           <button type="submit" class="button checkoutButton btn btn-light btn-sm"
             [disabled]="!formDetails.valid">Checkout</button>
 
-          <p *ngIf="!formDetails.valid" class="text">* required fields
-            <!-- Form Status: {{formDetails.status}} -->
-          </p>
-          <!-- <p>value: {{formDetails.value.email}}</p>
-          <p>email valid: {{formDetails.get('email').valid}}</p> -->
+          <p *ngIf="!formDetails.valid" class="requiredFields">* required fields</p>
+          <p *ngIf="!formDetails.valid" class="text"> First Name, Last Name and correct Email must be entered to checkout.</p>
         </form>
 
       </div>
     </div>
   </div>
-</div>
+</main>
 
 <app-footer2></app-footer2>
