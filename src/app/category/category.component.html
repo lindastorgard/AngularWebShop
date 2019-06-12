@@ -1,9 +1,9 @@
 <main class="container-fluid pageContainer">
-  <div class="row">
+  <section class="row">
     <div class="pageFrame col-12">
       <h1>{{category.name}}</h1>
     </div>
-  </div>
+  </section>
 
   <section class="row categoryMargin justify-content-center">
     <div class="col-10 d-flex flex-wrap justify-content-center categoryMovieContainer">
@@ -13,6 +13,7 @@
               src="{{myCategories.imageUrl}}" alt="{{myCategories.name}}">
           </a>
         </div>
+        <p class="movieTitle">{{myCategories.name | slice:0:37}}</p>
       </div>
     </div>
   </section>
