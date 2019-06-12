@@ -35,21 +35,17 @@ export class DataService implements IDataService {
     return this.http.post('https://medieinstitutet-wie-products.azurewebsites.net/api/orders', items);
   }
 
-  
+  getOrder(): Observable<ICart[]>{
+    let apiURL = 'https://medieinstitutet-wie-products.azurewebsites.net/api/orders?companyId=16';
+    return this.http.get<ICart[]>(apiURL);
+  }
 
-  
-  
+  deleteOrder(id: number){
+    return this.http.delete('https://medieinstitutet-wie-products.azurewebsites.net/api/orders/' + id);
+  }
 
-  // getSearch(): Observable<ISearch[]> {
-  //   return this.http.get<ISearch[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/search');
+  // searchMovies(term: string){
+  //   return this.http.get('https://medieinstitutet-wie-products.azurewebsites.net/api/search?searchText=' + term);
   // }
-
-
-
-
-
-
-
-
 
 }
