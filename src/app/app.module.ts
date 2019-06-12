@@ -15,7 +15,8 @@ import { Footer2Component } from './footer2/footer2.component';
 import { AdminComponent } from './admin/admin.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
 import { Error404Component } from './error404/error404.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { MovieFilterPipe } from './search/movie-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -31,13 +32,15 @@ import { ReactiveFormsModule } from '@angular/forms';
     Footer2Component,
     AdminComponent,
     ThankyouComponent,
-    Error404Component
+    Error404Component,
+    MovieFilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     ReactiveFormsModule

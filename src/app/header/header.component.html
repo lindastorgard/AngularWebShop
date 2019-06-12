@@ -1,11 +1,12 @@
 <nav class="navbar myNav">
   <a class="navbar-brand logo" [routerLink]="['/home']">mCast</a>
   <a class="nav-link navLink" [routerLink]="['/home']">Home</a>
-  <div class="form-inline my-2 my-lg-0">
+  <a class="nav-link navLink" [routerLink]="['/search']">Search movies</a>
+  <!-- <div class="form-inline my-2 my-lg-0">
     <input class="mr-sm-2" #searchBox id="search-box" (input)="search(searchBox.value)" placeholder="Search"
-      [routerLink]="['/search']">
+      [routerLink]="['/search']"> -->
     <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
-  </div>
+  <!-- </div> -->
 
   <div class="positioning d-flex flex-row">
     <p *ngIf="myCart" class="movieNumber">{{movieCounter}}</p>
