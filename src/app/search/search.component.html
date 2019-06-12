@@ -1,11 +1,23 @@
-<p>
-  search works!
-</p>
+<main class="container-fluid pageContainer">
+  <section class="row">
+    <div class="pageFrame col-12">
+      <h1>Search movies</h1>
+      <input type="text" placeholder="Search" [(ngModel)]="searchTerm" />
+    </div>
+  </section>
 
-<ul class="search-result">
-    <li *ngFor="let movie of movies$ | async">
-      <a>
-        {{movie.name}}
-      </a>
-    </li>
-  </ul>
+  <section class="row searchMargin justify-content-center">
+    <div class="col-10 d-flex flex-wrap justify-content-center">
+      <div *ngFor="let movie of movies | movieFilter:searchTerm" class="p-2">
+        <div class="searchMovieFrame">
+          <a [routerLink]="['/details', movie.id]" routerLinkActive="active"><img class="searchMoviePoster"
+              src="{{movie.imageUrl}}" alt="{{movie.name}}">
+          </a>
+        </div>
+        <p class="movieTitle">{{movie.name | slice:0:37}}</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<app-footer2></app-footer2>

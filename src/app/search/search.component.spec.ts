@@ -17,7 +17,7 @@ describe('SearchComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [SearchComponent, Footer2Component, CategoryComponent],
+      declarations: [SearchComponent, Footer2Component],
       providers: [{ provide: ActivatedRoute, useValue: activatedRouteStub },
       { provide: DataService, useClass: MockDataService }],
       imports: [RouterTestingModule],
