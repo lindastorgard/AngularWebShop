@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -13,6 +12,10 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { DetailsComponent } from './details/details.component';
 import { AlsolikeComponent } from './alsolike/alsolike.component';
 import { Footer2Component } from './footer2/footer2.component';
+import { AdminComponent } from './admin/admin.component';
+import { ThankyouComponent } from './thankyou/thankyou.component';
+import { Error404Component } from './error404/error404.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,12 +28,19 @@ import { Footer2Component } from './footer2/footer2.component';
     CheckoutComponent,
     DetailsComponent,
     AlsolikeComponent,
-    Footer2Component
+    Footer2Component,
+    AdminComponent,
+    ThankyouComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+  ],
+  exports: [
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

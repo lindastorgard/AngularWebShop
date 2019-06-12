@@ -1,14 +1,12 @@
-
 *{
     margin: 0;
     padding: 0;
 }
 
-
-/* category styling */
+/* category section */
 .categorySection{
     position: absolute;
-    top: calc(700px + 60px - 150px);
+    top: calc(600px + 60px - 150px);
     width: 100%;
     height: 150px;
     background-color: black;
@@ -29,6 +27,7 @@ h3{
     color: white;
     border-radius: 25px;
     padding: 5px 20px;
+    margin: 0.5em 0em;
 }
 
 .categoryButton:hover{
@@ -38,11 +37,10 @@ h3{
     font-weight: 300;
 }
 
-
-/* footer styling */
+/* social logo section */
 footer {
     position: absolute;
-    top: calc(700px + 60px);
+    top: calc(600px + 90px);
     height: 80px;
     width: 100%;
     background-color: black;
@@ -60,8 +58,41 @@ footer {
 .socialLogos{
     font-size: 1rem;
     color: white;
+    cursor: pointer;
 }
 
 .socialLogoHover:hover{
     color: orange;
+}
+
+
+/* min-width: 420px only for category section */
+@media (min-width: 420px) { 
+    .categorySection{
+        top: calc(630px + 60px - 150px);
+    }
+}
+
+
+/* min-width: 576px / category section and footer positioning */
+@media (min-width: 576px) { 
+    .categorySection{
+        top: calc(900px + 60px - 150px);
+    }
+
+    footer {
+        top: calc(900px + 60px);
+    }
+}
+
+
+/* min-width: 769px / category section and foote positioning */
+@media (min-width: 769px) { 
+    .categorySection{
+        top: calc(700px + 60px - 150px);
+    }
+
+    footer {
+        top: calc(700px + 60px);
+    }
 }

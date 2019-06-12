@@ -5,7 +5,8 @@ import { Observable, of } from 'rxjs';
 import { IMovie } from '../Interfaces/IMovie';
 import { ICategories } from '../Interfaces/ICategories';
 import { IRandom } from '../Interfaces/IRandom';
-import { ISearch } from '../Interfaces/ISearch';
+// import { ISearch } from '../Interfaces/ISearch';
+import { ICart } from '../Interfaces/ICart';
 
 
 @Injectable({
@@ -16,7 +17,8 @@ export class DataService implements IDataService {
   constructor(private http: HttpClient) { }
 
   getData(): Observable<IMovie[]> {
-    return this.http.get<IMovie[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/products');
+    let apiURL = 'https://medieinstitutet-wie-products.azurewebsites.net/api/products';
+    return this.http.get<IMovie[]>(apiURL);
   }
 
   getCategories(): Observable<ICategories[]> {
@@ -25,19 +27,25 @@ export class DataService implements IDataService {
   }
 
   getRandom(): Observable<IRandom[]> {
-    return this.http.get<IRandom[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/random?number=1');
+    let apiURL = 'https://medieinstitutet-wie-products.azurewebsites.net/api/random?number=1';
+    return this.http.get<IRandom[]>(apiURL);
   }
 
-  // getSearch(): Observable<ISearch[]> {
-  //   return this.http.get<ISearch[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/search');
+  createOrder(items: ICart){
+    return this.http.post('https://medieinstitutet-wie-products.azurewebsites.net/api/orders', items);
+  }
+
+  getOrder(): Observable<ICart[]>{
+    let apiURL = 'https://medieinstitutet-wie-products.azurewebsites.net/api/orders?companyId=16';
+    return this.http.get<ICart[]>(apiURL);
+  }
+
+  deleteOrder(id: number){
+    return this.http.delete('https://medieinstitutet-wie-products.azurewebsites.net/api/orders/' + id);
+  }
+
+  // searchMovies(term: string){
+  //   return this.http.get('https://medieinstitutet-wie-products.azurewebsites.net/api/search?searchText=' + term);
   // }
-
-
-
-
-
-
-
-
 
 }

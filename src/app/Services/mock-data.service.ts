@@ -4,7 +4,6 @@ import { IMovie } from '../Interfaces/IMovie';
 import { Observable, of } from 'rxjs';
 import { ICategories } from '../Interfaces/ICategories';
 import { IRandom } from '../Interfaces/IRandom';
-import { ISearch } from '../Interfaces/ISearch';
 import { ICart } from '../Interfaces/ICart';
 
 @Injectable({
@@ -23,6 +22,7 @@ export class MockDataService implements IDataService {
   getData(): Observable<IMovie[]> {
     return of(this.movies);
   };
+
 
   // mock-data for categories
   categories: ICategories[] = [
@@ -46,12 +46,38 @@ export class MockDataService implements IDataService {
     return of(this.random);
   };
 
-  // mock-data for addToCart
-  // För att skapa ordrar, gör en POST-request mot /orders-apiet och lägg med objekt med följande struktur i anropet:
 
-  cartItems: ICart[] = [
-    {id: 547, companyId: 16, created: '0001-01-01T00:00:00', createdBy: 0, paymentMethod: 0, totalPrice: 169, status: 0, orderRows: [{ ProductId: 1, Amount: 3 }] }
+  // mock-data for createOrder
+  cartItems = [
+    { id: 1, companyId: 16, created: '0001-01-01T00:00:00', createdBy: null, paymentMethod: null, totalPrice: 169, status: 0, orderRows: [{ productId: 1, amount: 1 }] },
+    { id: 2, companyId: 16, created: '0001-01-01T00:00:00', createdBy: null, paymentMethod: null, totalPrice: 234, status: 0, orderRows: [{ productId: 5, amount: 1 }] }
   ];
+
+  createOrder(cartItems: []): Observable<ICart[]> {
+    return of(this.cartItems);
+  }
+
+
+  // mock-data for getOrder() and deleteOrder()
+  itemsInDB = [
+    { id: 1, companyId: 16, created: '0001-01-01T00:00:00', createdBy: null, paymentMethod: null, totalPrice: 234, status: 0, orderRows: [{ productId: 2, amount: 1 }] },
+    { id: 2, companyId: 16, created: '0001-01-01T00:00:00', createdBy: null, paymentMethod: null, totalPrice: 234, status: 0, orderRows: [{ productId: 5, amount: 1 }] }
+  ];
+
+  getOrder(): Observable<ICart[]> {
+    return of(this.itemsInDB);
+  }
+
+  deleteOrder(id: number): Observable<ICart[]> {
+    for (let i = 0; i < this.itemsInDB.length; i++) {
+      if (this.itemsInDB[i].id === id) {
+        this.itemsInDB.splice(i, 1);
+      }
+    }
+    return of(this.itemsInDB);
+  }
+
+
 
   // mock-data for search
   // search: ISearch[] = [

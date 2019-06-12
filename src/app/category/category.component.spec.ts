@@ -2,10 +2,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CategoryComponent } from './category.component';
 import { DataService } from '../Services/data.service';
 import { MockDataService } from '../Services/mock-data.service';
-import { ActivatedRouteStub } from './testing/activateRouteStubs';
+import { ActivatedRouteStub } from '../testing/activateRouteStubs';
 import { ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
-import { toBase64String } from '@angular/compiler/src/output/source_map';
+import { Footer2Component } from '../footer2/footer2.component';
 
 
 describe('CategoryComponent', () => {
@@ -17,13 +17,13 @@ describe('CategoryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CategoryComponent ],
+      declarations: [CategoryComponent, Footer2Component],
 
       providers: [{ provide: ActivatedRoute, useValue: activatedRouteStub },
-        { provide: DataService, useClass: MockDataService}],
-        imports: [ RouterTestingModule ]
+      { provide: DataService, useClass: MockDataService }],
+      imports: [RouterTestingModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -33,12 +33,11 @@ describe('CategoryComponent', () => {
   });
 
   it('Parameter retrieved from url should be 2', () => {
-    for (let i=0; i<component.catMov.length; i++){
+    for (let i = 0; i < component.catMov.length; i++) {
       expect(component.catMov[i].productCategory).toContain({ categoryId: 2, category: 'Thriller' });
     }
   });
 
-  
   it('should retrieve category with id 1', () => {
     expect(component.category.id).toBe(2)
     component.getCategory(1);

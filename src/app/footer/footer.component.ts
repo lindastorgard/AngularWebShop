@@ -17,10 +17,8 @@ export class FooterComponent implements OnInit {
   ngOnInit() {
 
     this.service.getCategories().subscribe(
-      (dataCategories) => 
-      { 
+      (dataCategories) => { 
         this.categories = dataCategories; 
-        // console.log(dataCategories);
       });
   }
 }

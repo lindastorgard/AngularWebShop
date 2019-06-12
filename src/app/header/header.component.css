@@ -1,3 +1,146 @@
+.movieNumber{
+    margin-top: 10px;
+    color: white;
+    height: 18px;
+    width: 18px;
+    background-color: orange;
+    border-radius: 50px;
+    font-size: 0.7em;
+    font-weight: 500;
+    text-align: center;
+    padding-top: 1.5px;
+}
+.myNav{
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 60px;
+    background-color: black;
+    opacity: 0.7;
+}
+    
+.myTogglerIcon{
+    color: white;
+    font-size: 1.8rem;
+}
+    
+.toggler-icon{
+    color: white;
+}
+    
+    
+.logo{
+    color: red !important;
+    font-weight: 300;
+    font-size: 1rem;
+    cursor: pointer;
+}
+    
+.navLink{
+    color: white !important;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+    
+.navLink:hover{
+    color: orange !important;
+}
+    
+input{
+    border: 0.8px solid orange;
+    font-size: 0.6rem;
+    font-weight: 300;
+    background-color: black;
+    color: white;
+    border-radius: 25px;
+    padding: 0px 5px 0px 5px;
+    cursor: pointer;
+}
+    
+input:hover{
+    background-color: orange;
+    color: black;
+    border: black;
+    font-weight: 300;
+}
+    
+.navIcons{
+    color: white;
+    font-size: 0.6rem;
+    cursor: pointer;
+    margin-top: 10px;
+}
+    
+.navIcons:hover{
+    color: orange;
+}
+    
+    
+/* header cart css */
+    
+h1{
+    font-weight: 100;
+    font-size: 1rem;
+    padding: 1em;
+}
+    
+.headerDropdownPic{
+    width: 4em;
+}
+    
+.headerDropdownTitle{
+    color: black;
+    font-weight: 300;
+    font-size: 1rem;
+}
+    
+.headerDropdownPrice{
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+    
+.positioning{
+    position: relative;
+    top: 0;
+}
+    
+.dropdown-menu{
+    position: absolute;
+    top: 3em;
+    left: -17em;
+    background-color: white;
+    width: 20em;
+    height: auto;
+    max-height: 30em;
+    overflow-x: hidden;
+}
+    
+.dropdown-menu:hover{
+    background-color: white;
+        
+}
+    
+.cartButton{
+    font-size: 0.8rem;
+    font-weight: 500;
+    background-color: red;
+    color: white;
+    border-radius: 25px;
+    padding: 5px 20px;
+    cursor: pointer;
+}
+    
+.cartButton:hover{
+    background-color: orange;
+    color: black;
+    border: black;
+    font-weight: 300;
+}
+    
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
 .myNav{
     position: fixed;
     top: 0;
@@ -19,19 +162,19 @@
 
 
 .logo{
-    color: red;
+    color: red !important;
     font-weight: 300;
     font-size: 1.2rem;
+    cursor: pointer;
 }
 
 .navLink{
     color: white !important;
-    /* font-weight: 100;
-    font-size: 0.8rem; */
+    cursor: pointer;
 }
 
 .navLink:hover{
-    color: orange;
+    color: orange !important;
 }
 
 input{
@@ -42,6 +185,7 @@ input{
     color: white;
     border-radius: 25px;
     padding: 0px 90px 0px 10px;
+    cursor: pointer;
 }
 
 input:hover{
@@ -54,8 +198,72 @@ input:hover{
 .navIcons{
     color: white;
     font-size: 1rem;
+    cursor: pointer;
 }
 
 .navIcons:hover{
     color: orange;
+}
+
+
+/* header cart css */
+
+h1{
+    font-weight: 100;
+    font-size: 1rem;
+    padding: 1em;
+}
+
+.headerDropdownPic{
+    width: 4em;
+}
+
+.headerDropdownTitle{
+    color: black;
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+.headerDropdownPrice{
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+
+.positioning{
+    position: relative;
+    top: 0;
+}
+
+.dropdown-menu{
+    position: absolute;
+    top: 3em;
+    left: -17em;
+    background-color: white;
+    width: 20em;
+    height: auto;
+    max-height: 30em;
+    overflow-x: hidden;
+}
+
+.dropdown-menu:hover{
+    background-color: white;
+    
+}
+
+.cartButton{
+    font-size: 0.8rem;
+    font-weight: 500;
+    background-color: red;
+    color: white;
+    border-radius: 25px;
+    padding: 5px 20px;
+    cursor: pointer;
+}
+
+.cartButton:hover{
+    background-color: orange;
+    color: black;
+    border: black;
+    font-weight: 300;
+}
 }

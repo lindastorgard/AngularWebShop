@@ -1,17 +1,19 @@
-<div class="col-12">
-  <h1>You may also like</h1>
-  <div class="row">
-    <div class="col-12 d-flex flex-wrap justify-content-left alsolikeMargin">
-      <div *ngFor="let myAlsolike of alsolikeMov" class="p-2">
-        <div class="alsolikeMovieFrame">
-          <a [routerLink]="['/alsolike', myAlsolike.id]" routerLinkActive="active"><img class="alsolikeMoviePoster"
-              src="{{myAlsolike.imageUrl}}" alt="{{myAlsolike.name}}">
-          </a>
+<section class="container-fluid">
+  <div class="col-12">
+    <h1>You may also like</h1>
+    <div class="row">
+      <div class="col-10 d-flex flex-wrap justify-content-center justify-content-md-start alsolikeMargin">
+        <div *ngFor="let myAlsolike of alsolikeMov" class="p-2">
+          <div class="alsolikeMovieFrame">
+            <a [routerLink]="['/alsolike', myAlsolike.id]" routerLinkActive="active"><img class="alsolikeMoviePoster"
+                src="{{myAlsolike.imageUrl}}" alt="{{myAlsolike.name}}">
+            </a>
+          </div>
+          <p class="movieTitle">{{myAlsolike.name | slice:0:37}}</p>
         </div>
       </div>
     </div>
   </div>
-</div>
-
+</section>
 
 <app-footer2></app-footer2>

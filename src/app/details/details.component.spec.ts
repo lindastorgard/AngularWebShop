@@ -1,11 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DetailsComponent } from './details.component';
 import { ActivatedRoute } from '@angular/router';
-import { ActivatedRouteStub } from '../category/testing/activateRouteStubs';
+import { ActivatedRouteStub } from '../testing/activateRouteStubs';
 import { DataService } from '../Services/data.service';
 import { MockDataService } from '../Services/mock-data.service';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AlsolikeComponent } from '../alsolike/alsolike.component';
+import { Footer2Component } from '../footer2/footer2.component';
+import { MessageService } from '../Services/message.service';
 
 
 describe('DetailsComponent', () => {
@@ -16,10 +18,11 @@ describe('DetailsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [DetailsComponent, AlsolikeComponent],
+      declarations: [DetailsComponent, AlsolikeComponent, Footer2Component],
 
       providers: [{ provide: ActivatedRoute, useValue: activatedRouteStub },
-      { provide: DataService, useClass: MockDataService }],
+      { provide: DataService, useClass: MockDataService },
+      MessageService],
       imports: [RouterTestingModule]
     })
       .compileComponents();
@@ -44,4 +47,31 @@ describe('DetailsComponent', () => {
     component.getMovie(4);
     expect(component.movie.id).toEqual(4);
   });
+
+  it('Function addToCart() should add one movie ', () => {
+    let service = new MockDataService();
+    component.myStoredItemsList = [];
+    expect(component.myStoredItemsList.length).toEqual(0);
+    component.addToCart(1);
+    expect(component.myStoredItemsList.length).toEqual(1);
+  });
+
+  it('Function addToCart() should add two movies with same id ', () => {
+    let service = new MockDataService();
+    component.myStoredItemsList = [];
+    expect(component.myStoredItemsList.length).toEqual(0);
+    component.addToCart(1);
+    component.addToCart(1);
+    expect(component.myStoredItemsList.length).toEqual(1);
+  });
+
+   it('Function addToCart() should add two movies with different id:s ', () => {
+    let service = new MockDataService();
+    component.myStoredItemsList = [];
+    expect(component.myStoredItemsList.length).toEqual(0);
+    component.addToCart(1);
+    component.addToCart(2);
+    expect(component.myStoredItemsList.length).toEqual(2);
+  });
+
 });

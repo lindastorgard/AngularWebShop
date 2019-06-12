@@ -18,7 +18,6 @@ export class Footer2Component implements OnInit {
     this.service.getCategories().subscribe(
       (dataCategories) => {
         this.categories = dataCategories;
-        // console.log(dataCategories);
       });
   }
 }

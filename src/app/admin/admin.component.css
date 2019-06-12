@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.pageframe{
+    height: 100vh;
+}
+
+.adminFrame{
+    background-color: white;
+    margin-top: 10em;
+    padding: 2em;
+    max-width: 1000px;
+}
+
+h1{
+    font-weight: 100;
+    font-size: 2.8rem;
+    padding-bottom: 0.5em;
+}
+
+h2{
+    font-size: 1rem;
+    font-weight: 100;
+    padding: 2em 0em;
+    color: red;
+}
+
+.text{
+    font-size: 0.8rem;
+    font-weight: 100;
+    color: grey;
+}
+
+.textHeading{
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+.table th,
+.table td {
+    border: none !important;
+    border-color: none !important;
+    border-top: none !important;
+}
+
+.footerimage{
+    width: 5em;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 2%;
+}
