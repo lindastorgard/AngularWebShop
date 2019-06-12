@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IMovie } from '../Interfaces/IMovie';
 import { MessageService } from '../Services/message.service';
-import { Subscription } from 'rxjs';
-import { toDate } from '@angular/common/src/i18n/format_date';
 
 @Component({
   selector: 'app-header',
@@ -13,23 +11,56 @@ export class HeaderComponent implements OnInit {
 
   myCart: IMovie[] = [];
   message: boolean;
+  totalAmount: number;
+  deleted: boolean;
+  movieCounter: number;
+  cartItem: IMovie;
 
   constructor(private messageService: MessageService) { }
 
   ngOnInit() {
 
-    if(sessionStorage){
-      this.myCart = JSON.parse(sessionStorage.getItem("myStoredItems"));
+    if (sessionStorage) {
+      this.getSessionStorage();
     }
 
     this.messageService.messageInCart.subscribe(data => {
       this.message = data;
-      // console.log(data);
 
       if (data == true) {
-        this.myCart = JSON.parse(sessionStorage.getItem("myStoredItems"));
-        // console.log(this.myCart);
+        this.getSessionStorage();
+
+        if (this.myCart) {
+          this.movieCounter = this.myCart.length;
+          this.totalOrderAmount();
+        }
+      }
+    });
+
+    this.messageService.messageInCheckout.subscribe(deletedData => {
+      this.deleted = deletedData;
+
+      if (deletedData == true) {
+        this.getSessionStorage();
+
+        if (this.myCart) {
+          this.movieCounter = this.myCart.length;
+          this.totalOrderAmount();
+        }
       }
     });
   }
+
+  totalOrderAmount() {
+    this.totalAmount = 0;
+    for (var i = 0; i < this.myCart.length; i++) {
+      this.cartItem = this.myCart[i];
+      this.totalAmount += this.cartItem.price;
+    }
+  }
+
+  getSessionStorage(){
+    this.myCart = JSON.parse(sessionStorage.getItem("myStoredItems"));
+  }
+
 }
