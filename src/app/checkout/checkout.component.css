@@ -3,14 +3,23 @@
     padding: 0;
 }
 
+.notActive{
+    display: none;
+}
+
 .pageframe{
     background-color: black;
 }
 
 .checkoutFrame{
     background-color: white;
-    margin-top: 10em;
-    padding: 5em;
+    margin-top: 7em;
+    padding: 1.5em;
+}
+
+.requiredFields{
+    font-size: 1rem;
+    font-weight: 100;
 }
 
 .imageSize{
@@ -40,10 +49,20 @@ h3{
     font-weight: 100;
 }
 
+.text2{
+    font-size: 0.8rem;
+    font-weight: 100;
+    margin-bottom: 1em;
+}
+
 .formText{
     font-size: 1.6rem;
     font-weight: 100;
     padding: 2em 0 1em 0;
+}
+
+.totalAmount{
+    padding-top: 1em;
 }
 
 hr{
@@ -72,4 +91,31 @@ hr{
     color: black;
     border: black;
     font-weight: 300;
+}
+
+.deleteButton{
+    font-size: 0.8rem;
+    font-weight: 100;
+    background-color: orange;
+    color: black;
+    border-radius: 25px;
+    padding: 5px 20px;
+    margin: 1em 2em 1em 0em;
+}
+
+.deleteButton:hover{
+    background-color: lightgray;
+    color: black;
+    border: black;
+    font-weight: 300;
+}
+
+
+@media (min-width: 576px) { 
+    .checkoutFrame{
+        background-color: white;
+        margin-top: 10em;
+        padding: 3.5em;
+        max-width: 900px;
+    }
 }
