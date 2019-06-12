@@ -3,8 +3,7 @@
     padding: 0;
 }
 
-
-/* category styling */
+/* category section */
 .categorySection{
     width: 100%;
     background-color: black;
@@ -25,6 +24,7 @@ h3{
     color: white;
     border-radius: 25px;
     padding: 5px 20px;
+    margin: 0.5em 0em;
 }
 
 .categoryButton:hover{
@@ -34,8 +34,7 @@ h3{
     font-weight: 300;
 }
 
-
-/* footer styling */
+/* social logo section */
 footer {
     height: 80px;
     width: 100%;
@@ -44,6 +43,7 @@ footer {
 
 .logo{
     color: red;
+    cursor: pointer;
 }
 
 .footerText{
@@ -54,6 +54,7 @@ footer {
 .socialLogos{
     font-size: 1rem;
     color: white;
+    cursor: pointer;
 }
 
 .socialLogoHover:hover{

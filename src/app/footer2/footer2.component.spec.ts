@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Footer2Component } from './footer2.component';
-import { ActivatedRouteStub } from '../category/testing/activateRouteStubs';
+import { ActivatedRouteStub } from '../testing/activateRouteStubs';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../Services/data.service';
@@ -32,7 +32,7 @@ describe('Footer2Component', () => {
     expect(component).toBeTruthy();
   });
 
-  it('Parameter in categories should be 2', () => {
+  it('Id Parameter in categories should be 2', () => {
     for(let i=0; i<component.categories.length; i++){
       expect(component.categories).toContain( { id: 2, name: 'Comedy'});
     }
