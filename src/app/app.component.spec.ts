@@ -32,5 +32,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('MyAngularWebShop');
   });
 
-
 });
