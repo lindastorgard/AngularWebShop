@@ -2,27 +2,7 @@
   <div *ngFor="let randomMovie of random" class="row">
     <div class="randomMovieFrame col-12">
       <img class="randomMoviePoster" src="{{randomMovie.imageUrl}}" alt="{{randomMovie.name}}">
-      <!-- <h4>Id: {{randomMovie.productCategory}}</h4> -->
     </div>
   </div>
 </main>
 <app-footer></app-footer>
-
-  <!-- 
-  <div *ngFor="let mov of movies">
-
-
-    {{mov.name}}
-    Id: {{mov.productCategory[0].categoryId}}
-    Id: {{mov.productCategory[1].categoryId}}
-
-  </div> -->
-
-  <!-- <div *ngFor="let cat of categories">
-    Id {{cat.id}} = {{cat.name}}
-  </div> -->
-
-
-<!-- <p>Category: {{movie.productCategory[0].categoryId}}</p>
-        <p *ngIf='movie.productCategory[1]'>Category: {{movie.productCategory[1].categoryId}}</p> -->
-

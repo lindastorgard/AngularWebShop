@@ -1,10 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { HomeComponent } from './home.component';
 import { DataService } from '../Services/data.service';
 import { MockDataService } from '../Services/mock-data.service';
 import { FooterComponent } from '../footer/footer.component';
-import { ActivatedRouteStub } from '../category/testing/activateRouteStubs';
+import { ActivatedRouteStub } from '../testing/activateRouteStubs';
 import { ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 
