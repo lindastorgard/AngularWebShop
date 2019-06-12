@@ -3,7 +3,7 @@ import { FooterComponent } from './footer.component';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../Services/data.service';
 import { MockDataService } from '../Services/mock-data.service';
-import { ActivatedRouteStub } from '../category/testing/activateRouteStubs';
+import { ActivatedRouteStub } from '../testing/activateRouteStubs';
 import { RouterTestingModule } from '@angular/router/testing';
 
 
@@ -29,7 +29,7 @@ describe('FooterComponent', () => {
     fixture.detectChanges();
   });
 
-  it('Parameter in categories should be 2', () => {
+  it('Id Parameter in categories should be 2', () => {
     for(let i=0; i<component.categories.length; i++){
       expect(component.categories).toContain( { id: 2, name: 'Comedy'});
     }
