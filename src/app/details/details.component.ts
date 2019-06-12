@@ -11,12 +11,9 @@ import { MessageService } from '../Services/message.service';
 })
 export class DetailsComponent implements OnInit {
 
-
-  movies: IMovie[];
   movie: IMovie = { id: 0, name: '', price: 0, imageUrl: '', description: '', productCategory: [] };
-  myStoredItemsList: IMovie[] = [{ id: 0, name: '', price: 0, imageUrl: '', description: '', productCategory: [] }];
-  message: boolean;
-
+  cartMessage: string;
+  myStoredItemsList: IMovie[] = [];
 
   constructor(private route: ActivatedRoute, private service: DataService, private messageService: MessageService) { }
 
@@ -25,67 +22,48 @@ export class DetailsComponent implements OnInit {
     this.route.paramMap.subscribe(
       (myParams) => {
         let movieId = +myParams.get('id');
-        // console.log("Router id from category:", movieId);
         this.getMovie(+movieId);
-      }
-    )
+      });
+
   }
 
-  // addToCart(id: number) {
+  addToCart(id: number) {
+    this.service.getData().subscribe(
+      (data) => {
+        this.movie = data.find(a => a.id === id);
 
-  //   this.service.getData().subscribe(data => {
-  //     this.movie = data.find(a => a.id === id);
-  //     // console.log("My add to cart details: ", this.movie);
+        if (sessionStorage.getItem("myStoredItems") == null || !sessionStorage) {
+          this.myStoredItemsList.push(this.movie);
+          sessionStorage.setItem("myStoredItems", JSON.stringify([this.movie]));
+        } else {
+          this.myStoredItemsList = JSON.parse(sessionStorage.getItem("myStoredItems")) || [];
 
-  //     if (sessionStorage.getItem("myStoredItems") == null) {
-  //       sessionStorage.setItem("myStoredItems", JSON.stringify([this.movie]));
-  //       // console.log("Movie from sessionStorage", JSON.parse(sessionStorage.getItem("myStoredItems")));
-  //     } else {
-  //       let myStoredItemsList: IMovie[] = [];
-  //       myStoredItemsList = JSON.parse(sessionStorage.getItem("myStoredItems"));
-  //       myStoredItemsList.push(this.movie);
-  //       sessionStorage.setItem("myStoredItems", JSON.stringify(myStoredItemsList));
-  //       console.log("Movies from sessionStorage", JSON.parse(sessionStorage.getItem("myStoredItems")));
-  //     }
+          let foundMovie = false;
+          for (let index = 0; index < this.myStoredItemsList.length; index++) {
+            if (id === this.myStoredItemsList[index].id) {
+              foundMovie = true;
+            }
+          }
 
-  //     this.messageService.setMessage(true);
-  //   });
-  // }
+          if (foundMovie) {
+            this.cartMessage = "Movie is already in your cart."
+          }
 
-  addToCart(movieId: number) {
-
-    this.service.getData().subscribe(data => {
-      this.movie = data.find(a => a.id === movieId);
-
-      if (sessionStorage.getItem("myStoredItems") == null) {
-        sessionStorage.setItem("myStoredItems", JSON.stringify([this.movie]));
-        // console.log("Movie from sessionStorage", JSON.parse(sessionStorage.getItem("myStoredItems")));
-      } else {
-        let myStoredItemsList: IMovie[] = [];
-        myStoredItemsList = JSON.parse(sessionStorage.getItem("myStoredItems"));
-        console.log("movie list from storage: ", myStoredItemsList);
-        // console.log("movie id: ", this.movie.id);
-
-        for (let i = 0; i < myStoredItemsList.length; i++) {
-          if (myStoredItemsList[i].id !== this.movie.id) {
-            myStoredItemsList.push(this.movie);
-            sessionStorage.setItem("myStoredItems", JSON.stringify(myStoredItemsList));
+          if (!foundMovie) {
+            this.myStoredItemsList.push(this.movie);
+            sessionStorage.setItem("myStoredItems", JSON.stringify(this.myStoredItemsList));
           }
         }
-      }
-      console.log("Movies from sessionStorage", JSON.parse(sessionStorage.getItem("myStoredItems")));
-      this.messageService.setMessage(true);
-    });
+
+        this.messageService.setMessage(true);
+      });
   }
-
-
 
   getMovie(id: number) {
-    this.service.getData().subscribe(data => {
-      this.movie = data.find(a => a.id === id);
-      // console.log("My movie details: ", this.movie);
-    });
+    this.service.getData().subscribe(
+      (data) => {
+        this.movie = data.find(a => a.id === id);
+      });
   }
+
 }
-
-

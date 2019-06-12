@@ -1,38 +1,34 @@
 <main class="container-fluid">
   <section class="row detailsColorFrame">
-    <div class="col-7 detailsText">
-      <h1 class="movieHeading">{{movie.name}}</h1>
+    <div class="col-12 col-sm-8 col-md-7 detailsText">
+      <h1 class="movieHeading">{{movie.name | slice:0:37}}</h1>
       <i class="fas fa-star movieStar"></i>
       <i class="fas fa-star movieStar"></i>
       <i class="fas fa-star movieStar"></i>
       <i class="fas fa-star movieStar"></i>
       <div class="d-flex flex-row">
         <p class="movieSubTextTop">{{movie.year}}</p>
-        <p class="movieSubTextTop">|</p>
-        <p class="movieSubTextTop">Genre x</p>
       </div>
       <hr>
       <button class="button movieButton btn btn-light btn-sm">Watch trailer</button>
-      <!-- <a class="button movieButtonAction btn btn-light btn-sm" [routerLink]="['/cart', movie.id]" routerLinkActive="active">Buy now
-          <strong>{{movie.price}}</strong>
-          kr!</a> -->
       <button class="button movieButtonAction btn btn-light btn-sm" (click)="addToCart(movie.id)">Buy now
         <strong>{{movie.price}}</strong>
-        kr!</button>
+        sek!</button>
+      <p class="movieAlertMessage">{{cartMessage}}</p>
       <hr>
       <div class="row">
         <div class="col-5 d-flex flex-row">
-          <p class="movieSubHeading">Genre</p>
           <p class="movieSubHeading">Year</p>
+          <p class="movieSubHeading">Added</p>
         </div>
       </div>
       <div class="row">
         <div class="col-5 d-flex flex-row">
-          <p class="movieSubText">Genre x</p>
           <p class="movieSubText">{{movie.year}}</p>
+          <p class="movieSubText">{{movie.added | date:'M/d/yyyy'}}</p>
+          
         </div>
       </div>
-
       <hr>
       <p class="movieSubHeading">Description</p>
       <p class="movieSubText">{{movie.description}}</p>
@@ -40,7 +36,7 @@
   </section>
 
   <section class="row">
-    <div class="col-7 detailsMovieFrame">
+    <div class="col-12 col-sm-8 col-md-7 detailsMovieFrame">
       <img class="detailsMoviePoster" src="{{movie.imageUrl}}" alt="{{movie.name}}">
       <i class="far fa-play-circle detailsMoviePosterOverlay"></i>
     </div>
