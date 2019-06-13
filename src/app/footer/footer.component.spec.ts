@@ -6,7 +6,6 @@ import { MockDataService } from '../Services/mock-data.service';
 import { ActivatedRouteStub } from '../testing/activateRouteStubs';
 import { RouterTestingModule } from '@angular/router/testing';
 
-
 describe('FooterComponent', () => {
   let component: FooterComponent;
   let fixture: ComponentFixture<FooterComponent>;

@@ -5,9 +5,7 @@ import { Observable, of } from 'rxjs';
 import { IMovie } from '../Interfaces/IMovie';
 import { ICategories } from '../Interfaces/ICategories';
 import { IRandom } from '../Interfaces/IRandom';
-// import { ISearch } from '../Interfaces/ISearch';
 import { ICart } from '../Interfaces/ICart';
-
 
 @Injectable({
   providedIn: 'root'
@@ -43,9 +41,5 @@ export class DataService implements IDataService {
   deleteOrder(id: number){
     return this.http.delete('https://medieinstitutet-wie-products.azurewebsites.net/api/orders/' + id);
   }
-
-  // searchMovies(term: string){
-  //   return this.http.get('https://medieinstitutet-wie-products.azurewebsites.net/api/search?searchText=' + term);
-  // }
 
 }

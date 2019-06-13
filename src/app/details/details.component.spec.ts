@@ -56,7 +56,7 @@ describe('DetailsComponent', () => {
     expect(component.myStoredItemsList.length).toEqual(1);
   });
 
-  it('Function addToCart() should add two movies with same id ', () => {
+  it('Function addToCart() should not add two movies with same id ', () => {
     let service = new MockDataService();
     component.myStoredItemsList = [];
     expect(component.myStoredItemsList.length).toEqual(0);
