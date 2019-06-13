@@ -91,7 +91,7 @@ export class CheckoutComponent implements OnInit {
     };
  
     this.service.createOrder(this.checkoutItems).subscribe(
-      (response) => console.log(response)
+      // (response) => console.log(response)
     );
 
     this.formDetails.reset();

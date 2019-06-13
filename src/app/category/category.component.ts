@@ -4,7 +4,6 @@ import { ICategories } from '../Interfaces/ICategories';
 import { DataService } from '../Services/data.service';
 import { ActivatedRoute } from '@angular/router';
 
-
 @Component({
   selector: 'app-category',
   templateUrl: './category.component.html',

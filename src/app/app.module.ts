@@ -48,4 +48,5 @@ import { MovieFilterPipe } from './search/movie-filter.pipe';
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

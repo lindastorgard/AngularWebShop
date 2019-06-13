@@ -57,6 +57,4 @@ describe('CheckoutComponent', () => {
     expect(component.isCartActive).toBe(true);
   });
 
-  //setOrder test
-
 });

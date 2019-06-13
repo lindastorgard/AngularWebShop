@@ -11,7 +11,6 @@ import { Error404Component } from './error404/error404.component';
 
 const routes: Routes = [
 
-  // { path: 'search', component: SearchComponent},
   { path: 'categories/:id', component: CategoryComponent },
   { path: 'details/:id', component: DetailsComponent },
   { path: 'alsolike/:id', component: DetailsComponent },
@@ -29,4 +28,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }
