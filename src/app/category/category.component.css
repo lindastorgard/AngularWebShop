@@ -32,7 +32,8 @@ h1{
 
 .categoryMoviePoster{
     width: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 
 .movieTitle{
@@ -49,24 +50,33 @@ h1{
 }
 
 
-@media (min-width: 768px) {     
-    h1{
-        font-size: 2.8rem;
-        top: 3.5em;
-        left: 60%;
-    }
-    
+@media (min-width: 576px) { 
     .categoryMovieFrame{
-        width: 260px;
-        height: 260px;
-    }
-
-    .categoryMargin{
-        margin-top: 15em;
+        width: 160px;
+        height: 160px;
     }
 
     .movieTitle{
-        width: 260px;
+        width: 160px;
+    }
+}
+
+
+@media (min-width: 698px) {
+    h1{
+        top: 3em;
+        left: 55%;
+    }
+} 
+
+
+@media (min-width: 768px) {     
+    h1{
+        font-size: 2.8rem;
+    }
+
+    .categoryMovieContainer{
+        padding-top: 2em;
     }
 }
 
@@ -75,13 +85,15 @@ h1{
     .categoryMoviePoster{
         opacity: 0.5;
         -webkit-transition: .3s ease-in-out;
+        -o-transition: .3s ease-in-out;
         transition: .3s ease-in-out;
         cursor: pointer;
     }
     
     .categoryMoviePoster:hover{
         width: 100%;
-        object-fit: cover;
+        -o-object-fit: cover;
+           object-fit: cover;
         opacity: 1;
     }    
 }

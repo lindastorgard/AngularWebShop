@@ -23,7 +23,8 @@ h1{
 
 .alsolikeMoviePoster{
     width: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 
 .movieTitle{
@@ -50,11 +51,11 @@ h1{
     }
     
     .alsolikeMovieFrame{
-        width: 220px;
-        height: 220px;
+        width: 160px;
+        height: 160px;
     }
 
     .movieTitle{
-        width: 220px;
+        width: 160px;
     }
 }
