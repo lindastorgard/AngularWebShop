@@ -79,6 +79,17 @@ input{
 }
 
 
+@media (min-width: 576px) {
+    .searchMovieFrame{
+        width: 160px;
+        height: 160px;
+    }
+    .movieTitle{
+        width: 160px;
+    }
+} 
+
+
 @media (min-width: 768px) {     
     h1{
         position: absolute;
@@ -92,18 +103,9 @@ input{
         left: 48%;
         width: 290px;
     }
-    
-    .searchMovieFrame{
-        width: 260px;
-        height: 260px;
-    }
 
     .searchMargin{
         margin-top: 15em;
-    }
-
-    .movieTitle{
-        width: 260px;
     }
 }
 

@@ -5,7 +5,7 @@
       <div class="col-10 d-flex flex-wrap justify-content-center justify-content-md-start alsolikeMargin">
         <div *ngFor="let myAlsolike of alsolikeMov" class="p-2">
           <div class="alsolikeMovieFrame">
-            <a [routerLink]="['/alsolike', myAlsolike.id]" routerLinkActive="active"><img class="alsolikeMoviePoster"
+            <a [routerLink]="['/alsolike', myAlsolike.id]"><img class="alsolikeMoviePoster"
                 src="{{myAlsolike.imageUrl}}" alt="{{myAlsolike.name}}">
             </a>
           </div>

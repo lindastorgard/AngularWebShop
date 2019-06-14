@@ -51,11 +51,11 @@ h1{
     }
     
     .alsolikeMovieFrame{
-        width: 220px;
-        height: 220px;
+        width: 160px;
+        height: 160px;
     }
 
     .movieTitle{
-        width: 220px;
+        width: 160px;
     }
 }
