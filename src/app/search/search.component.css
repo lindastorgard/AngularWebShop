@@ -47,7 +47,8 @@ input{
 
 .searchMoviePoster{
     width: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 
 .movieTitle{
@@ -111,13 +112,15 @@ input{
     .searchMoviePoster{
         opacity: 0.5;
         -webkit-transition: .3s ease-in-out;
+        -o-transition: .3s ease-in-out;
         transition: .3s ease-in-out;
         cursor: pointer;
     }
     
     .searchMoviePoster:hover{
         width: 100%;
-        object-fit: cover;
+        -o-object-fit: cover;
+           object-fit: cover;
         opacity: 1;
     }    
 }
