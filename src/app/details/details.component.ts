@@ -11,7 +11,7 @@ import { MessageService } from '../Services/message.service';
 })
 export class DetailsComponent implements OnInit {
 
-  movie: IMovie = { id: 0, name: '', price: 0, imageUrl: '', description: '', productCategory: [] };
+  movie: IMovie = { id: 0, added: '', year: 0, name: '', price: 0, imageUrl: '', description: '', productCategory: [] };
   cartMessage: string;
   myStoredItemsList: IMovie[] = [];
 

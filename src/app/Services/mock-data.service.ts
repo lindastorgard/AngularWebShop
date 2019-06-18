@@ -13,10 +13,10 @@ export class MockDataService implements IDataService {
 
   // mock-data for movies
   movies: IMovie[] = [
-    { id: 1, name: 'Movie 1', price: 69, description: 'One star movie', imageUrl: '#', productCategory: [{ categoryId: 1, category: 'Action' }, { categoryId: 2, category: 'Thriller' }] },
-    { id: 2, name: 'Movie 2', price: 45, description: 'Two star movie', imageUrl: '#', productCategory: [{ categoryId: 1, category: 'Action' }, { categoryId: 2, category: 'Thriller' }] },
-    { id: 3, name: 'Movie 3', price: 69, description: 'Three star movie', imageUrl: '#', productCategory: [{ categoryId: 1, category: 'Action' }, { categoryId: 2, category: 'Thriller' }] },
-    { id: 4, name: 'Movie 4', price: 69, description: 'Four star movie', imageUrl: '#', productCategory: [{ categoryId: 1, category: 'Action' }, { categoryId: 2, category: 'Thriller' }] }
+    { id: 1, added: '', year: 0, name: 'Movie 1', price: 69, description: 'One star movie', imageUrl: '#', productCategory: [{ categoryId: 1, category: 'Action' }, { categoryId: 2, category: 'Thriller' }] },
+    { id: 2, added: '', year: 0, name: 'Movie 2', price: 45, description: 'Two star movie', imageUrl: '#', productCategory: [{ categoryId: 1, category: 'Action' }, { categoryId: 2, category: 'Thriller' }] },
+    { id: 3, added: '', year: 0, name: 'Movie 3', price: 69, description: 'Three star movie', imageUrl: '#', productCategory: [{ categoryId: 1, category: 'Action' }, { categoryId: 2, category: 'Thriller' }] },
+    { id: 4, added: '', year: 0, name: 'Movie 4', price: 69, description: 'Four star movie', imageUrl: '#', productCategory: [{ categoryId: 1, category: 'Action' }, { categoryId: 2, category: 'Thriller' }] }
   ];
 
   getData(): Observable<IMovie[]> {

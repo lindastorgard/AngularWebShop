@@ -13,11 +13,11 @@
 }
 
 h1{
-    position: absolute;
+    z-index: 50;
+    padding-top: 100px;
+    padding-left: 120px;
     font-weight: 100;
     font-size: 2.5rem;
-    top: 3em;
-    left: 45%;
     color: white;
 }
 
@@ -45,12 +45,17 @@ h1{
 }
 
 .categoryMargin{
-    margin-top: 12em;
+    margin-top: 3em;
     padding-bottom: 5em;
 }
 
 
 @media (min-width: 576px) { 
+    h1{
+        padding-top: 150px;
+        padding-left: 550px;
+    }
+
     .categoryMovieFrame{
         width: 160px;
         height: 160px;
@@ -59,15 +64,17 @@ h1{
     .movieTitle{
         width: 160px;
     }
+
+    .categoryMargin{
+        margin-top: 2em;
+        padding-bottom: 5em;
+    }
 }
 
 
-@media (min-width: 698px) {
-    h1{
-        top: 3em;
-        left: 55%;
-    }
-} 
+/* @media (min-width: 698px) {
+    
+}  */
 
 
 @media (min-width: 768px) {     
@@ -82,6 +89,10 @@ h1{
 
 
 @media (min-width: 1200px) { 
+    h1{
+        padding-top: 150px;
+        padding-left: 750px;
+    }
     .categoryMoviePoster{
         opacity: 0.5;
         -webkit-transition: .3s ease-in-out;

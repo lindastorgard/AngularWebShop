@@ -11,7 +11,7 @@ import { IMovie } from '../Interfaces/IMovie';
 export class AlsolikeComponent implements OnInit {
 
   movies: IMovie[];
-  movie: IMovie = { id: 0, name: '', price: 0, imageUrl: '', description: '', productCategory: [] };
+  movie: IMovie = { id: 0, added: '', year: 0, name: '', price: 0, imageUrl: '', description: '', productCategory: [] };
   alsolikeMov: IMovie[] = [];
 
   constructor(private route: ActivatedRoute, private service: DataService) { }

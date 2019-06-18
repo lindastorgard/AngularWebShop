@@ -13,18 +13,18 @@
 }
 
 h1{
-    position: absolute;
+    z-index: 50;
+    padding-top: 100px;
+    padding-left: 120px;
     font-weight: 100;
     font-size: 2.5rem;
-    top: 3em;
-    left: 45%;
     color: white;
 }
 
 input{
-    position: absolute;
-    top: 17em;
-    left: 3em;
+    margin-left: 40px;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
     width: 240px;
     border: 0.8px solid orange;
     font-size: 0.8rem;
@@ -33,7 +33,6 @@ input{
     color: white;
     border-radius: 25px;
     padding: 5px 20px;
-    margin: 0.5em 0em;
 }
 
 /* images */
@@ -60,21 +59,31 @@ input{
 }
 
 .searchMargin{
-    margin-top: 16em;
+    margin-top: 1em;
     padding-bottom: 5em;
 }
 
 
 @media (min-width: 375px) {
     input{
-        left: 5.2em; 
+        margin-left: 70px; 
+    }
+
+    h1{
+        padding-left: 80px;
+        padding-bottom: 20px;
+    }
+
+    .searchMargin{
+        margin-top: 3em;
+        padding-bottom: 5em;
     }
 }
 
 
 @media (min-width: 414px) {
     input{
-        left: 6.8em; 
+        margin-left: 90px; 
     }
 }
 
@@ -92,20 +101,18 @@ input{
 
 @media (min-width: 768px) {     
     h1{
-        position: absolute;
+        padding-top: 150px;
+        padding-left: 320px;
         font-size: 2.8rem;
-        top: 3em;
-        left: 48%;
     }
 
     input{
-        top: 15em;
-        left: 48%;
+        margin-left: 310px; 
         width: 290px;
     }
 
     .searchMargin{
-        margin-top: 15em;
+        margin-top: 2em;
     }
 }
 
@@ -124,5 +131,9 @@ input{
         -o-object-fit: cover;
            object-fit: cover;
         opacity: 1;
-    }    
+    }   
+    
+    input{
+        margin-left: 320px; 
+    }
 }
